@@ -9,20 +9,20 @@ import en_local from "./translations/en.json"
 import fr_local from "./translations/fr.json"
 
 
-const data:{[key:string]:any}= {
-    'en':en_local,
-    'fr':fr_local
+const data: { [key: string]: {} } = {
+    'en': en_local,
+    'fr': fr_local
 }
 
 const language = navigator.language.split(/[-_]/)[0];
 
 ReactDOM.render(
-  <React.StrictMode>
-      <IntlProvider locale={language} messages={data[language]}>
-      <App />
-      </IntlProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <IntlProvider locale={language} messages={data[language]}>
+            <App/>
+        </IntlProvider>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

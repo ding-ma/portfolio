@@ -1,4 +1,6 @@
 {
-  "homepage.welcome": "Bienvenue!",
-  "homepage.subscribeHeader": "Subscribe Maintenant!"
+  "header.about": "Sur moi",
+  "header.resume": "CV",
+  "header.portfolio": "Travaux",
+  "header.introduction": "Je suis"
 }

@@ -1,4 +1,6 @@
 {
-"homepage.welcome": "Welcome!",
-"homepage.subscribeHeader": "Subscribe Now"
+  "header.about": "About",
+  "header.resume": "Resume",
+  "header.portfolio": "Works",
+  "header.introduction": "I'm currently a third year software engineering student at McGill University located in the {province} of Québec."
 }
