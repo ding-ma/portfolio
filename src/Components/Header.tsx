@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import Typed from 'react-typed';
-import { FormattedMessage } from 'react-intl';
+import {FormattedMessage} from 'react-intl';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faGithubSquare, faLinkedinIn} from '@fortawesome/free-brands-svg-icons'
-import {faArrowAltCircleDown} from '@fortawesome/free-regular-svg-icons'
+import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
+import {faChevronCircleDown} from '@fortawesome/free-solid-svg-icons'
 import './Header.css'
 
 interface IProps {
@@ -20,19 +20,20 @@ class Header extends Component<IProps, IState> {
 
     render() {
 
-        const networks = [
+        const networks: JSX.Element[] = [
             {
                 "name": "linkedin",
                 "url": "https://www.linkedin.com/in/ding--ma/",
-                "icon": faLinkedinIn
+                "icon": faLinkedin
             },
             {
                 "name": "github",
                 "url": "https://github.com/ding-ma",
-                "icon": faGithubSquare
+                "icon": faGithub
             }
         ].map(function (network) {
-            return <li key={network.name}><a href={network.url} target="_blank"><FontAwesomeIcon icon={network.icon}/></a>
+            return <li key={network.name}><a href={network.url} target="_blank"><FontAwesomeIcon
+                icon={network.icon}/></a>
             </li>;
         });
 
@@ -78,7 +79,7 @@ class Header extends Component<IProps, IState> {
                 </div>
 
                 <p className="scrolldown">
-                    <a className="smoothscroll" href="#about"><FontAwesomeIcon icon={faArrowAltCircleDown}/></a>
+                    <a className="smoothscroll" href="#about"><FontAwesomeIcon icon={faChevronCircleDown}/></a>
                 </p>
 
             </header>

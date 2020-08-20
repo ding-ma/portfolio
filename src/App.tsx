@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import 'react-notifications-component/dist/theme.css'
 import ReactNotification, {store} from 'react-notifications-component'
 import About from "./Components/About";
-import {FormattedMessage} from "react-intl";
 import Header from "./Components/Header";
 import Resume from "./Components/Resume";
 import Portfolio from "./Components/Portfolio";
@@ -43,6 +42,7 @@ class App extends Component<IProps, IState>{
         <div className="App">
             <ReactNotification/>
             <Header/>
+            <About handleNotification={this.handleNotificationSuccess}/>
         </div>
     )
   }
