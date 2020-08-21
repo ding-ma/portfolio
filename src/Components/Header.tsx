@@ -16,10 +16,6 @@ interface IState {
 
 class Header extends Component<IProps, IState> {
 
-    constructor(props: IProps) {
-        super(props);
-    }
-
     render() {
 
         const networks: JSX.Element[] = [
@@ -34,7 +30,8 @@ class Header extends Component<IProps, IState> {
                 "icon": faGithub
             }
         ].map(function (network) {
-            return <li key={network.name}><a href={network.url} target="_blank"><FontAwesomeIcon
+            return <li key={network.name}><a href={network.url} target="_blank"
+                                             rel="noopener noreferrer"><FontAwesomeIcon
                 icon={network.icon}/></a>
             </li>;
         });
