@@ -42,7 +42,7 @@ class App extends Component<IProps, IState>{
         <div className="App">
             <ReactNotification/>
             <Header/>
-            <About handleNotification={this.handleNotificationSuccess}/>
+
         </div>
     )
   }

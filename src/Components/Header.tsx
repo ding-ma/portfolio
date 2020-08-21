@@ -4,7 +4,7 @@ import {FormattedMessage} from 'react-intl';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 import {faChevronCircleDown} from '@fortawesome/free-solid-svg-icons'
-import './Header.css'
+
 
 interface IProps {
 }
@@ -39,22 +39,24 @@ class Header extends Component<IProps, IState> {
 
         return (
             <header id="home">
-                <nav id="nav-wrap">
-                    <a className="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
-                    <ul id="nav" className="nav">
-                        <li className="current"><a className="smoothscroll" href="#home">Home</a></li>
-                        <li><a className="smoothscroll" href="#about">
-                            <FormattedMessage id="header.about"/>
-                        </a></li>
-                        <li><a className="smoothscroll" href="#resume">
-                            <FormattedMessage id="header.resume"/>
-                        </a></li>
-                        <li><a className="smoothscroll" href="#portfolio">
-                            <FormattedMessage id="header.portfolio"/>
-                        </a></li>
-                    </ul>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"/>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div className="navbar-nav">
+                            <a className="nav-item nav-link active" href="#home">Home <span
+                                className="sr-only">(current)</span></a>
+                            <a className="nav-item nav-link" href="#about"><FormattedMessage id="header.about"/></a>
+                            <a className="nav-item nav-link" href="#resume"><FormattedMessage id="header.resume"/></a>
+                            <a className="nav-item nav-link" href="#portfolio"><FormattedMessage id="header.portfolio"/></a>
+                        </div>
+                    </div>
                 </nav>
+
                 <div className="row banner">
                     <div className="banner-text">
                         <h1 className="responsive-headline">

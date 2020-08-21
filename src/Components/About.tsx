@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Modal from "react-responsive-modal";
 import profImg from '../Images/profilepic.jpg'
-import './About.css'
 import {FormattedMessage} from "react-intl";
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -126,12 +126,12 @@ class About extends Component<IProps, IState>{
                                 </p>
                             </div>
                             <div className="columns download">
-                                <p>
+                                <Button  variant="secondary" className="button">
                                     <a href="https://mcgill-my.sharepoint.com/:b:/g/personal/ding_ma_mail_mcgill_ca/ES82qOpc0I1OkmsnucwAxA0BDsvpo_O5e-qOCzPbdsXtKw?e=akagpW"
                                        className="button" target="_blank" rel="noopener noreferrer">See PDF Resume</a>
-                                </p>
+                                </Button>
                                 <div>
-                                    <button onClick={this.openOnModal} className="button">Contact Me</button>
+                                    <Button onClick={this.openOnModal} className="button">Contact Me</Button>
                                     <Modal closeOnEsc={true} open={open} onClose={this.onCloseModal} showCloseIcon={false}
                                            closeOnOverlayClick={true} center={true}>
                                         <h2>Contact Me</h2>
