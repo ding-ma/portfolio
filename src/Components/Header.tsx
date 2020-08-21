@@ -5,7 +5,6 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 import {faChevronCircleDown} from '@fortawesome/free-solid-svg-icons'
 import "./Header.css"
-import LanguageSwitch from "../translations/LanguageSwitch";
 
 
 interface IProps {
@@ -40,9 +39,9 @@ class Header extends Component<IProps, IState> {
             </li>;
         });
 
-
+        //todo close nav when clicked on mobile
         return (
-            <header id="home">
+            <header id="#home">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
@@ -50,11 +49,12 @@ class Header extends Component<IProps, IState> {
                             aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"/>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <a className="nav-item nav-link active" href="#home">Home <span
                                 className="sr-only">(current)</span></a>
-                            <a className="nav-item nav-link" href="#about"><FormattedMessage id="header.about"/></a>
+                            <a className="nav-item nav-link smoothscroll" href="#about"><FormattedMessage
+                                id="header.about"/></a>
                             <a className="nav-item nav-link" href="#resume"><FormattedMessage id="header.resume"/></a>
                             <a className="nav-item nav-link" href="#portfolio"><FormattedMessage id="header.portfolio"/></a>
                         </div>
@@ -93,9 +93,10 @@ class Header extends Component<IProps, IState> {
                 </div>
 
                 <div className="d-flex justify-content-center">
-                <p className="scrolldown">
-                    <a className="smoothscroll" href="#about"><FontAwesomeIcon icon={faChevronCircleDown}/></a>
-                </p>
+                    <ul className="social">
+                        <li className="smoothscroll"><a href="#about"><FontAwesomeIcon icon={faChevronCircleDown}/></a>
+                        </li>
+                    </ul>
                 </div>
             </header>
 
