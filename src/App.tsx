@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 import 'react-notifications-component/dist/theme.css'
 import ReactNotification, {store} from 'react-notifications-component'
 import About from "./Components/About";
-import {FormattedMessage} from "react-intl";
+import Header from "./Components/Header";
+import Button from 'react-bootstrap/Button'
+import "./App.css"
+import LanguageSwitch from "./translations/LanguageSwitch";
 
 interface IProps{
 
@@ -32,14 +35,12 @@ class App extends Component<IProps, IState>{
         })
     };
 
-
   render() {
-
       return(
         <div className="App">
+            <button type="button" className="btn btn-dark fixed"> <LanguageSwitch/></button>
             <ReactNotification/>
-            <About handleNotification={this.handleNotificationSuccess}/>
-          123
+            <Header/>
         </div>
     )
   }

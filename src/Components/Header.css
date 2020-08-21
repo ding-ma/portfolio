@@ -1,0 +1,13 @@
+.navbar .navbar-nav {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 992px) {
+    .navbar .navbar-collapse {
+        text-align: center;
+        height: 100vh;
+    }
+}
+

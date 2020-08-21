@@ -1,4 +1,11 @@
 {
-"homepage.welcome": "Welcome!",
-"homepage.subscribeHeader": "Subscribe Now"
+  "header.about": "About",
+  "header.resume": "Resume",
+  "header.portfolio": "Works",
+  "header.introduction": "I'm currently a third year software engineering student at McGill University located in the {province} of Québec.",
+  "About.me": "I was born in China and raised in Gatineau (Québec). Growing up, I learned to speak English, French, as well as Mandarin. Currently, my interests are in automation, backend development, AI/ML, and data science. Outside of school I play violin, cook, game. I also have an interest in {techwear} .",
+  "About.contract.details": "Contact Details",
+  "About.button.resume": "See PDF resume",
+  "About.button.contact": "Contact Me",
+  "About.contact.form": "What would you like to chat about? Can be anything..."
 }

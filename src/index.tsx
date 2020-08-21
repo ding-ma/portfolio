@@ -1,28 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { IntlProviderWrapper } from "./translations/IntlContext";
 
-import {IntlProvider} from "react-intl";
-import en_local from "./translations/en.json"
-import fr_local from "./translations/fr.json"
-
-
-const data:{[key:string]:any}= {
-    'en':en_local,
-    'fr':fr_local
-}
-
-const language = navigator.language.split(/[-_]/)[0];
 
 ReactDOM.render(
-  <React.StrictMode>
-      <IntlProvider locale={language} messages={data[language]}>
-      <App />
-      </IntlProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <IntlProviderWrapper>
+            <App/>
+        </IntlProviderWrapper>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
