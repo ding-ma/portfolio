@@ -5,6 +5,8 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 import {faChevronCircleDown} from '@fortawesome/free-solid-svg-icons'
 import "./Header.css"
+import {IntlContext, IntlProviderWrapper} from "../translations/IntlContext";
+import LanguageSwitch from "../translations/LanguageSwitch";
 
 interface IProps {
 }
@@ -37,7 +39,9 @@ class Header extends Component<IProps, IState> {
             </li>;
         });
 
+
         return (
+
             <header id="home">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -57,9 +61,10 @@ class Header extends Component<IProps, IState> {
                     </div>
                 </nav>
 
-                <div className="row banner">
-                    <div className="banner-text">
-                        <h1 className="responsive-headline">
+                <div className="row">
+                    <div className="col-10 d-flex justify-content-center">
+
+                    <h1 className="responsive-headline" >
                             <Typed
                                 strings={[
                                     'Hi, I\'m',
@@ -71,20 +76,28 @@ class Header extends Component<IProps, IState> {
                                 showCursor={false}
                                 loop
                             /> Ding<span className="yellowText">.</span></h1>
+                    </div>
+                    <hr/>
+                    <div className="col-10 d-flex">
+                        <h3 ><FormattedMessage id="header.introduction" values={{province: <i>belle province</i>}}/></h3>
+                    </div>
                         <hr/>
-                        <h3><FormattedMessage id="header.introduction" values={{province: <i>belle province</i>}}/></h3>
-                        <hr/>
+                    <div className="col-10 d-flex justify-content-center">
                         <ul className="social">
                             {networks}
                         </ul>
                     </div>
+
                 </div>
 
+                <div className="col-10 d-flex justify-content-center">
                 <p className="scrolldown">
                     <a className="smoothscroll" href="#about"><FontAwesomeIcon icon={faChevronCircleDown}/></a>
                 </p>
+                </div>
 
             </header>
+
         )
     }
 }

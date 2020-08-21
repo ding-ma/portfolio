@@ -2,5 +2,10 @@
   "header.about": "Sur moi",
   "header.resume": "CV",
   "header.portfolio": "Travaux",
-  "header.introduction": "Je suis"
+  "header.introduction": "Je suis some other fr {province} of Québec.",
+  "About.me": "some fr text here {techwear} .",
+  "About.contract.details": "Detailt de contact",
+  "About.button.resume": "Voir CV en PDF",
+  "About.button.contact": "Contactez Moi",
+  "About.contact.form": "Que veux tu parler de?"
 }
