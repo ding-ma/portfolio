@@ -4,7 +4,7 @@ import {FormattedMessage} from 'react-intl';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 import {faChevronCircleDown} from '@fortawesome/free-solid-svg-icons'
-
+import "./Header.css"
 
 interface IProps {
 }
