@@ -61,10 +61,12 @@ class Header extends Component<IProps, IState> {
                     </div>
                 </nav>
 
-                <div className="row">
-                    <div className="col-10 d-flex justify-content-center">
+                <div className="">
+                    <div className=""/>
+                    <div className="d-flex justify-content-center "/>
+                    <div className="d-flex justify-content-center ">
 
-                    <h1 className="responsive-headline" >
+                    <h1 className="responsive-headline " >
                             <Typed
                                 strings={[
                                     'Hi, I\'m',
@@ -78,19 +80,19 @@ class Header extends Component<IProps, IState> {
                             /> Ding<span className="yellowText">.</span></h1>
                     </div>
                     <hr/>
-                    <div className="col-10 d-flex">
-                        <h3 ><FormattedMessage id="header.introduction" values={{province: <i>belle province</i>}}/></h3>
+                    <div className="d-flex justify-content-center">
+                        <p ><FormattedMessage id="header.introduction" values={{province: <i>belle province</i>}}/></p>
                     </div>
+                    <hr/>
                         <hr/>
-                    <div className="col-10 d-flex justify-content-center">
+                    <div className="d-flex justify-content-center">
                         <ul className="social">
                             {networks}
                         </ul>
                     </div>
-
                 </div>
 
-                <div className="col-10 d-flex justify-content-center">
+                <div className="d-flex justify-content-center">
                 <p className="scrolldown">
                     <a className="smoothscroll" href="#about"><FontAwesomeIcon icon={faChevronCircleDown}/></a>
                 </p>
