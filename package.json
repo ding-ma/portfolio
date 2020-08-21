@@ -1,6 +1,7 @@
 {
   "name": "portfolio-ts",
   "version": "0.1.0",
+  "homepage": "https://ding-ma.github.io/portfolio-ts/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
@@ -36,6 +37,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "extract-messages": "NODE_ENV=production babel ./src  --out-file /dev/null"
