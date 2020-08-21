@@ -84,7 +84,7 @@ class Header extends Component<IProps, IState> {
                         <p ><FormattedMessage id="header.introduction" values={{province: <i>belle province</i>}}/></p>
                     </div>
                     <hr/>
-                        <hr/>
+
                     <div className="d-flex justify-content-center">
                         <ul className="social">
                             {networks}
