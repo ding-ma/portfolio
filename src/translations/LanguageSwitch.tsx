@@ -5,8 +5,8 @@ const LanguageSwitch = () => {
     const {switchToEnglish, switchToFrench} = React.useContext(IntlContext);
     return (
         <div>
-            <button onClick={switchToEnglish}>English</button>
-            <button onClick={switchToFrench}>French</button>
+            <a className="nav-item nav-link" onClick={switchToEnglish}>English</a>
+            <a className="nav-item nav-link" onClick={switchToFrench}>French</a>
         </div>
     );
 };

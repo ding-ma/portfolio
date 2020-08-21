@@ -3,9 +3,8 @@ import 'react-notifications-component/dist/theme.css'
 import ReactNotification, {store} from 'react-notifications-component'
 import About from "./Components/About";
 import Header from "./Components/Header";
-import Resume from "./Components/Resume";
-import Portfolio from "./Components/Portfolio";
-import Footer from "./Components/Footer";
+import {Button} from "react-bootstrap";
+import "./App.css"
 
 interface IProps{
 
@@ -41,6 +40,8 @@ class App extends Component<IProps, IState>{
       return(
         <div className="App">
             <ReactNotification/>
+            <Button variant="primary" className="element">Primary</Button>
+
             <Header/>
             <About handleNotification={this.handleNotificationSuccess}/>
         </div>

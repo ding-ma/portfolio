@@ -5,14 +5,15 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 import {faChevronCircleDown} from '@fortawesome/free-solid-svg-icons'
 import "./Header.css"
-import {IntlContext, IntlProviderWrapper} from "../translations/IntlContext";
 import LanguageSwitch from "../translations/LanguageSwitch";
+
 
 interface IProps {
 }
 
 interface IState {
 }
+
 
 class Header extends Component<IProps, IState> {
 
@@ -41,7 +42,6 @@ class Header extends Component<IProps, IState> {
 
 
         return (
-
             <header id="home">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -95,7 +95,6 @@ class Header extends Component<IProps, IState> {
                     <a className="smoothscroll" href="#about"><FontAwesomeIcon icon={faChevronCircleDown}/></a>
                 </p>
                 </div>
-
             </header>
 
         )
