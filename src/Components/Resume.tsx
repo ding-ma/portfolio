@@ -8,9 +8,6 @@ interface IState {
 
 class Resume extends Component<IProps, IState> {
 
-    constructor(props: IProps) {
-        super(props);
-    }
 
     render() {
 
