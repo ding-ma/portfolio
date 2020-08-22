@@ -1,7 +1,8 @@
 import React from 'react'
 import {injectIntl} from 'react-intl'
 
-const IntlTextBox = ({labelId, labelName, placeholderId, intl}) => (
+const IntlTextBox = ({labelId, labelName, placeholderId, intl}:
+                         { labelId: string, labelName: string, placeholderId: string, intl: any }) => (
     <textarea
         id={labelId}
         name={labelName}

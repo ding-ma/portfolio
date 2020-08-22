@@ -1,7 +1,8 @@
 import React from 'react'
 import {injectIntl} from 'react-intl'
 
-const IntlLabel = ({labelId, labelName, placeholderId, intl}) => (
+const IntlLabel = ({labelId, labelName, placeholderId, intl}:
+                       { labelId: string, labelName: string, placeholderId: string, intl: any }) => (
     <input
         id={labelId}
         name={labelName}
