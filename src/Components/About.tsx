@@ -4,7 +4,8 @@ import {FormattedMessage} from "react-intl";
 import Button from 'react-bootstrap/Button';
 import IntlTextBox from "../translations/TextFieldTransalattion";
 import IntlLabel from "../translations/InputTransalation";
-
+import profile from "../Images/profilepic.jpg"
+import "./About.css"
 
 interface IProps {
     handleNotification: any
@@ -91,35 +92,36 @@ class About extends Component<IProps, IState> {
 
         return (
             <section id="about">
-                <div className="d-flex">
-                    <div className="">
-                        //image here
-                    </div>
-                    <div className="d-flex justify-content-center">
-                        <h2><FormattedMessage id={"About"}/></h2>
-                        <p><FormattedMessage id={"About.me"} values={{
-                            techwear: <a href="https://www.grailed.com/drycleanonly/an-introduction-to-techwear"
-                                         target="_blank" rel="noopener noreferrer"><i> techwear</i></a>
-                        }}/></p>
+                <div className="container-fluid">
+                    <div className="row justify-content-center">
 
-                        <div className="">
-                            <div className="">
-                                <h2><FormattedMessage id={"About.contact"}/></h2>
-                                <p className="address">
-                                    <span>Ding Ma</span><br/>
-                                    <span>
-						         Montréal, Quebéc
-                   </span><br/>
-                                    <span>438-522-3139</span><br/>
-                                    <span>ding.ma@mail.mcgill.ca</span>
-                                </p>
-                            </div>
-                            <div className="">
-                                <Button variant="secondary" className="button">
-                                    <a href="https://mcgill-my.sharepoint.com/:b:/g/personal/ding_ma_mail_mcgill_ca/ES82qOpc0I1OkmsnucwAxA0BDsvpo_O5e-qOCzPbdsXtKw?e=akagpW"
-                                       className="button" target="_blank" rel="noopener noreferrer">See PDF Resume</a>
-                                </Button>
-                                <div>
+                        <img className="profile-pic" src={profile} alt=""/>
+
+                    </div>
+
+
+                    <div className="row">
+                        <div className="col-md-3 offset-md-4">
+                            <h2><FormattedMessage id={"About"}/></h2>
+                        </div>
+                        <div className="col-md-4 offset-md-4">
+                            <p><FormattedMessage id={"About.me"} values={{
+                                techwear: <a href="https://www.grailed.com/drycleanonly/an-introduction-to-techwear"
+                                             target="_blank" rel="noopener noreferrer"><i> techwear</i></a>
+                            }}/></p>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-sm-5 offset-md-4">
+                            <h2><FormattedMessage id={"About.contact"}/></h2>
+                            <div className="row">
+                                <div className="col-8 col-sm-6">
+                                    <Button variant="secondary" className="button">
+                                        <a href="https://mcgill-my.sharepoint.com/:b:/g/personal/ding_ma_mail_mcgill_ca/ES82qOpc0I1OkmsnucwAxA0BDsvpo_O5e-qOCzPbdsXtKw?e=akagpW"
+                                           className="button" target="_blank" rel="noopener noreferrer">See PDF
+                                            Resume</a>
+                                    </Button>
                                     <Button onClick={this.openOnModal}><FormattedMessage
                                         id={"About.button.contact"}/></Button>
                                     <Modal closeOnEsc={true} open={open} onClose={this.onCloseModal}
@@ -129,9 +131,21 @@ class About extends Component<IProps, IState> {
                                         {renderForm(this.onCloseModal, handleNotification)}
                                     </Modal>
                                 </div>
+                                <div className="col-4 col-sm-6">
+                                    <p className="address">
+                                        <span>Ding Ma</span><br/>
+                                        <span>
+						         Montréal, Quebéc
+                                </span><br/>
+                                        <span>438-522-3139</span><br/>
+                                        <span>ding.ma@mail.mcgill.ca</span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </section>
 
