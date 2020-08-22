@@ -90,15 +90,19 @@ class About extends Component<IProps, IState> {
             )
         }
 
+        /*
+             <div className="col-8 col-sm-6">
+
+
+                                </div>
+
+         */
         return (
             <section id="about">
                 <div className="container-fluid">
                     <div className="row justify-content-center">
-
                         <img className="profile-pic" src={profile} alt=""/>
-
                     </div>
-
 
                     <div className="row">
                         <div className="col-md-3 offset-md-4">
@@ -115,22 +119,8 @@ class About extends Component<IProps, IState> {
                     <div className="row">
                         <div className="col-sm-5 offset-md-4">
                             <h2><FormattedMessage id={"About.contact"}/></h2>
+
                             <div className="row">
-                                <div className="col-8 col-sm-6">
-                                    <Button variant="secondary" className="button">
-                                        <a href="https://mcgill-my.sharepoint.com/:b:/g/personal/ding_ma_mail_mcgill_ca/ES82qOpc0I1OkmsnucwAxA0BDsvpo_O5e-qOCzPbdsXtKw?e=akagpW"
-                                           className="button" target="_blank" rel="noopener noreferrer">See PDF
-                                            Resume</a>
-                                    </Button>
-                                    <Button onClick={this.openOnModal}><FormattedMessage
-                                        id={"About.button.contact"}/></Button>
-                                    <Modal closeOnEsc={true} open={open} onClose={this.onCloseModal}
-                                           showCloseIcon={false}
-                                           closeOnOverlayClick={true} center={true}>
-                                        <h2><FormattedMessage id={"About.button.contact"}/></h2>
-                                        {renderForm(this.onCloseModal, handleNotification)}
-                                    </Modal>
-                                </div>
                                 <div className="col-4 col-sm-6">
                                     <p className="address">
                                         <span>Ding Ma</span><br/>
@@ -141,12 +131,33 @@ class About extends Component<IProps, IState> {
                                         <span>ding.ma@mail.mcgill.ca</span>
                                     </p>
                                 </div>
+
+
+                                <div className="row justify-content-center">
+                                    <div className="col-4">
+                                        <Button variant="secondary">
+                                            <a href="https://mcgill-my.sharepoint.com/:b:/g/personal/ding_ma_mail_mcgill_ca/ES82qOpc0I1OkmsnucwAxA0BDsvpo_O5e-qOCzPbdsXtKw?e=akagpW"
+                                               className="" target="_blank" rel="noopener noreferrer">
+                                                <FormattedMessage id={"About.button.resume"}/></a>
+                                        </Button>
+                                    </div>
+                                    <div className="col-4">
+                                        <Button variant="secondary" onClick={this.openOnModal}>
+                                            <FormattedMessage id={"About.button.contact"}/></Button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-
                 </div>
+
+                <Modal closeOnEsc={true} open={open} onClose={this.onCloseModal}
+                       showCloseIcon={false}
+                       closeOnOverlayClick={true} center={true}>
+                    <h2><FormattedMessage id={"About.button.contact"}/></h2>
+                    {renderForm(this.onCloseModal, handleNotification)}
+                </Modal>
             </section>
 
         )
