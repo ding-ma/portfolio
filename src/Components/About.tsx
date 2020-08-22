@@ -109,7 +109,7 @@ class About extends Component<IProps, IState> {
                             <h2><FormattedMessage id={"About"}/></h2>
                         </div>
                         <div className="col-md-4 offset-md-4">
-                            <p><FormattedMessage id={"About.me"} values={{
+                            <p className={"center"}><FormattedMessage id={"About.me"} values={{
                                 techwear: <a href="https://www.grailed.com/drycleanonly/an-introduction-to-techwear"
                                              target="_blank" rel="noopener noreferrer"><i> techwear</i></a>
                             }}/></p>
@@ -135,14 +135,14 @@ class About extends Component<IProps, IState> {
 
                                 <div className="row justify-content-center">
                                     <div className="col-4">
-                                        <Button variant="secondary">
+                                        <Button variant="secondary" className="button">
                                             <a href="https://mcgill-my.sharepoint.com/:b:/g/personal/ding_ma_mail_mcgill_ca/ES82qOpc0I1OkmsnucwAxA0BDsvpo_O5e-qOCzPbdsXtKw?e=akagpW"
-                                               className="" target="_blank" rel="noopener noreferrer">
+                                               className="no-link" target="_blank" rel="noopener noreferrer">
                                                 <FormattedMessage id={"About.button.resume"}/></a>
                                         </Button>
                                     </div>
                                     <div className="col-4">
-                                        <Button variant="secondary" onClick={this.openOnModal}>
+                                        <Button variant="secondary" className="button" onClick={this.openOnModal}>
                                             <FormattedMessage id={"About.button.contact"}/></Button>
                                     </div>
                                 </div>

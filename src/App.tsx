@@ -5,6 +5,7 @@ import About from "./Components/About";
 import Header from "./Components/Header";
 import "./App.css"
 import LanguageSwitch from "./translations/LanguageSwitch";
+import Resume from "./Components/Resume";
 
 interface IProps{
 
@@ -41,6 +42,7 @@ class App extends Component<IProps, IState>{
             <ReactNotification/>
             <Header/>
             <About handleNotification={this.handleNotificationSuccess()}/>
+            <Resume/>
         </div>
     )
   }

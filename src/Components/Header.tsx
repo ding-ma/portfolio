@@ -36,9 +36,9 @@ class Header extends Component<IProps, IState> {
             </li>;
         });
 
-        //todo close nav when clicked on mobile
         return (
-            <header id="#home">
+            <header id="#home" className={"fullscreen"}>
+
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
@@ -50,20 +50,18 @@ class Header extends Component<IProps, IState> {
                         <div className="navbar-nav">
                             <a className="nav-item nav-link active" href="#home">Home <span
                                 className="sr-only">(current)</span></a>
-                            <a className="nav-item nav-link smoothscroll" href="#about"><FormattedMessage
+                            <a className="nav-item nav-link" href="#about"><FormattedMessage
                                 id="header.about"/></a>
                             <a className="nav-item nav-link" href="#resume"><FormattedMessage id="header.resume"/></a>
                             <a className="nav-item nav-link" href="#portfolio"><FormattedMessage id="header.portfolio"/></a>
                         </div>
                     </div>
                 </nav>
-
+                <div className={"navbarPadding"}/>
                 <div className="">
-                    <div className=""/>
-                    <div className="d-flex justify-content-center "/>
                     <div className="d-flex justify-content-center ">
 
-                    <h1 className="responsive-headline " >
+                        <h1 className="responsive-headline ">
                             <Typed
                                 strings={[
                                     'Hi, I\'m',
@@ -78,9 +76,15 @@ class Header extends Component<IProps, IState> {
                     </div>
                     <hr/>
                     <div className="d-flex justify-content-center">
-                        <p ><FormattedMessage id="header.introduction" values={{province: <i>belle province</i>}}/></p>
+                        <div className="row">
+                            <div className="col-md-auto centerText">
+                                <FormattedMessage id="header.introduction" values={{province: <i>belle province</i>}}/>
+                            </div>
+                        </div>
+
                     </div>
                     <hr/>
+                    <div className={"navbarPadding"}/>
 
                     <div className="d-flex justify-content-center">
                         <ul className="social">
