@@ -4,11 +4,9 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
 
 interface IState {
-
 }
 
 interface IProps {
-
 }
 
 class Contact extends Component<IProps, IState> {
@@ -31,10 +29,13 @@ class Contact extends Component<IProps, IState> {
                 "icon": faEnvelope
             }
         ].map(function (network) {
-            return <li key={network.name}><a href={network.url} target="_blank"
-                                             rel="noopener noreferrer"><FontAwesomeIcon
-                icon={network.icon}/></a>
-            </li>;
+            return (
+                <li key={network.name}>
+                    <a href={network.url} target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={network.icon}/>
+                    </a>
+                </li>
+            )
         });
 
         return (

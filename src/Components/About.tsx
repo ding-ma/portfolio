@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Modal from "react-responsive-modal";
 import {FormattedMessage} from "react-intl";
 import Button from 'react-bootstrap/Button';
-import IntlTextBox from "../translations/TextFieldTransalattion";
+import IntlTextBox from "../translations/TextFieldTransalation";
 import IntlLabel from "../translations/InputTransalation";
 import profile from "../Images/profilepic.jpg"
 import "./About.css"
@@ -40,8 +40,6 @@ class About extends Component<IProps, IState> {
         const renderForm = (isOpen: ((event: React.FormEvent<HTMLFormElement>) => void) | undefined, notification: any) => {
             //mXve9YwHNaBnKLA9/3TzwVMOQYK+l03anPJsAL+lnUg=
             return (
-
-
                 <div id="container">
 
                     <form
@@ -90,13 +88,6 @@ class About extends Component<IProps, IState> {
             )
         }
 
-        /*
-             <div className="col-8 col-sm-6">
-
-
-                                </div>
-
-         */
         return (
             <section id="about">
                 <div className="container-fluid">

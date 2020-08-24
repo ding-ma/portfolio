@@ -110,7 +110,7 @@ class Resume extends Component<IProps, IState> {
 
                     <div className="row">
                         <div className="col-md-3 offset-md-4">
-                            <h1><span><FormattedMessage id={"Internships"}/></span></h1>
+                            <h1><span><FormattedMessage id={"Internship"}/></span></h1>
                         </div>
                         <div className="col-md-4 offset-md-4">
                             {works}

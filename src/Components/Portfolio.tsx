@@ -85,7 +85,7 @@ class Portfolio extends Component<IProps, IState> {
 
                 <div className={"container"}>
                     <div className="col-md-6 offset-md-2">
-                        <h1>Check Out Some of My Works.</h1>
+                        <h1><FormattedMessage id={"Projects"}/></h1>
                     </div>
 
                     <div className="container-fluid">
