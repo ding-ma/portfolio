@@ -7,6 +7,8 @@ import scripts from "../Images/scripts.png"
 import website from "../Images/website.jpg"
 import {faExternalLinkAlt} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import "./Portfolio.css"
+import {FormattedMessage} from "react-intl";
 
 interface IProps {
 }
@@ -25,32 +27,32 @@ class Portfolio extends Component<IProps, IState> {
         //todo shrink and add some padding
         const projects: any[] = [
             {
-                "title": "Brick Breaker",
-                "category": "Class project: model-based programming",
+                "title": "Carousel.Brick",
+                "category": "Carousel.Brick.description",
                 "image": ecse223,
                 "url": "https://github.com/ding-ma/ECSE-223-Brick-Breaker"
             },
             {
-                "title": "Minerva Auto-Registration",
-                "category": "Registers automatically to classes with Puppeteer and GCP",
+                "title": "Carousel.Minerva",
+                "category": "Carousel.Minerva.description",
                 "image": bird,
                 "url": "https://github.com/ding-ma/mcgill-autoregistration"
             },
             {
-                "title": "Miscellaneous Scripts",
-                "category": "Small form built during my S19 intern to help my life",
+                "title": "Carousel.Scripts",
+                "category": "Carousel.Scripts.descriptions",
                 "image": scripts,
                 "url": "https://github.com/ding-ma/Weather_Bulleting_Separator"
             },
             {
-                "title": "Data Verification",
-                "category": "Script that analyzes weather data and highlights important information",
+                "title": "Carousel.dataverif",
+                "category": "Carousel.dataverif.description",
                 "image": dataVerif,
                 "url": "https://github.com/ding-ma/Data_Verification"
             },
             {
-                "title": "This Website",
-                "category": "Built in React.js. Simple. Responsive website.",
+                "title": "Carousel.website",
+                "category": "Carousel.website.description",
                 "image": website,
                 "url": "https://github.com/ding-ma/portfolio"
             }
@@ -66,12 +68,12 @@ class Portfolio extends Component<IProps, IState> {
                              src={project.image}/>
                         <div className="carousel-caption">
                             <FontAwesomeIcon
-                                icon={faExternalLinkAlt} className="top-right"/>
+                                icon={faExternalLinkAlt}/>
                             <h4>
-                                {project.title}
+                                <FormattedMessage id={project.title}/>
                             </h4>
                             <p>
-                                {project.category}
+                                <FormattedMessage id={project.category}/>
                             </p>
                         </div>
                     </a>
@@ -82,57 +84,54 @@ class Portfolio extends Component<IProps, IState> {
             <section id="portfolio">
 
                 <div className={"container"}>
-
                     <div className="col-md-6 offset-md-2">
                         <h1>Check Out Some of My Works.</h1>
                     </div>
 
                     <div className="container-fluid">
-                        <div className="row">
-                            <div className="col-md-12">
-                                <div className="carousel slide" id="carousel-644408">
-                                    <ol className="carousel-indicators">
-                                        <li data-slide-to="0" data-target="#carousel-644408" className="active"/>
-                                        <li/>
-                                        <li/>
-                                        <li/>
-                                        <li/>
-                                        <li/>
-                                    </ol>
-                                    <div className="carousel-inner">
-                                        <div className="carousel-item active">
-                                            <a href={"https://github.com/ding-ma/Projet-tude-de-cas-en-Qualit-de-l-air"}
-                                               target="_blank"
-                                               rel="noopener noreferrer">
-                                                <img className="d-block w-100" alt="Carousel Bootstrap First"
-                                                     src={aide}/>
-                                                <div className="carousel-caption">
-                                                    <FontAwesomeIcon
-                                                        icon={faExternalLinkAlt} className="top-right"/>
-                                                    <h4>
-                                                        AIDE - GUI tool
-                                                    </h4>
-                                                    <p>
-                                                        Built during my S19 intern
-                                                    </p>
-                                                </div>
-                                            </a>
+                        <div className="carousel slide" id="carousel-644408">
+                            <ol className="carousel-indicators">
+                                <li data-slide-to="0" data-target="#carousel-644408" className="active"/>
+                                <li/>
+                                <li/>
+                                <li/>
+                                <li/>
+                                <li/>
+                            </ol>
+                            <div className="carousel-inner">
+                                <div className="carousel-item active">
+                                    <a href={"https://github.com/ding-ma/Projet-tude-de-cas-en-Qualit-de-l-air"}
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        <img className="d-block w-100" alt="Carousel Bootstrap First"
+                                             src={aide}/>
+                                        <div className="carousel-caption">
+                                            <FontAwesomeIcon
+                                                icon={faExternalLinkAlt}/>
+                                            <h4>
+                                                <FormattedMessage id={"Carousel.active"}/>
+                                            </h4>
+                                            <p>
+                                                <FormattedMessage id={"Carousel.active.description"}/>
+                                            </p>
                                         </div>
-                                        {projects}
-
-                                    </div>
-                                    <a className="carousel-control-prev" href="#carousel-644408" data-slide="prev"><span
-                                        className="carousel-control-prev-icon"/> <span
-                                        className="sr-only">Previous</span></a> <a className="carousel-control-next"
-                                                                                   href="#carousel-644408"
-                                                                                   data-slide="next"><span
-                                    className="carousel-control-next-icon"/> <span className="sr-only">Next</span></a>
+                                    </a>
                                 </div>
+                                {projects}
                             </div>
+
+                            <a className="carousel-control-prev" href="#carousel-644408" data-slide="prev">
+                                <span className="carousel-control-prev-icon"/>
+                                <span className="sr-only">Previous</span>
+                            </a>
+                            <a className="carousel-control-next" href="#carousel-644408" data-slide="next">
+                                <span className="carousel-control-next-icon"/>
+                                <span className="sr-only">Next</span>
+                            </a>
+
                         </div>
                     </div>
                 </div>
-
 
             </section>
         );
