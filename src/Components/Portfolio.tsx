@@ -5,7 +5,8 @@ import bird from "../Images/McGillBird.jpg"
 import dataVerif from "../Images/dataVerif.png"
 import scripts from "../Images/scripts.png"
 import website from "../Images/website.jpg"
-import "./Portfolio.css"
+import {faExternalLinkAlt} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 interface IProps {
 }
@@ -23,12 +24,6 @@ class Portfolio extends Component<IProps, IState> {
 
         //todo shrink and add some padding
         const projects: any[] = [
-            {
-                "title": "AIDE - GUI tool",
-                "category": "Built during my S19 intern",
-                "image": aide,
-                "url": "https://github.com/ding-ma/Projet-tude-de-cas-en-Qualit-de-l-air"
-            },
             {
                 "title": "Brick Breaker",
                 "category": "Class project: model-based programming",
@@ -65,22 +60,24 @@ class Portfolio extends Component<IProps, IState> {
             }
         ).map(function (project) {
             return (
-                <div key={project.title} className="portfolio-item col-lg-6">
+                <div className="carousel-item">
                     <a href={project.url} target="_blank" rel="noopener noreferrer">
-                        <div className="item-wrap">
-                            <img alt={project.title} src={project.image}/>
-                            <div className="overlay">
-                                <div className="portfolio-item-meta">
-                                    <h5>{project.title}</h5>
-                                    <p>{project.category}</p>
-                                </div>
-                            </div>
+                        <img className="d-block w-100" alt="Carousel Bootstrap Item"
+                             src={project.image}/>
+                        <div className="carousel-caption">
+                            <FontAwesomeIcon
+                                icon={faExternalLinkAlt} className="top-right"/>
+                            <h4>
+                                {project.title}
+                            </h4>
+                            <p>
+                                {project.category}
+                            </p>
                         </div>
                     </a>
                 </div>
             )
         });
-
         return (
             <section id="portfolio">
 
@@ -90,11 +87,50 @@ class Portfolio extends Component<IProps, IState> {
                         <h1>Check Out Some of My Works.</h1>
                     </div>
 
-                    <div id="portfolio-wrapper" className="row justify-content-around">
-                        {projects}
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="col-md-12">
+                                <div className="carousel slide" id="carousel-644408">
+                                    <ol className="carousel-indicators">
+                                        <li data-slide-to="0" data-target="#carousel-644408" className="active"/>
+                                        <li/>
+                                        <li/>
+                                        <li/>
+                                        <li/>
+                                        <li/>
+                                    </ol>
+                                    <div className="carousel-inner">
+                                        <div className="carousel-item active">
+                                            <a href={"https://github.com/ding-ma/Projet-tude-de-cas-en-Qualit-de-l-air"}
+                                               target="_blank"
+                                               rel="noopener noreferrer">
+                                                <img className="d-block w-100" alt="Carousel Bootstrap First"
+                                                     src={aide}/>
+                                                <div className="carousel-caption">
+                                                    <FontAwesomeIcon
+                                                        icon={faExternalLinkAlt} className="top-right"/>
+                                                    <h4>
+                                                        AIDE - GUI tool
+                                                    </h4>
+                                                    <p>
+                                                        Built during my S19 intern
+                                                    </p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        {projects}
+
+                                    </div>
+                                    <a className="carousel-control-prev" href="#carousel-644408" data-slide="prev"><span
+                                        className="carousel-control-prev-icon"/> <span
+                                        className="sr-only">Previous</span></a> <a className="carousel-control-next"
+                                                                                   href="#carousel-644408"
+                                                                                   data-slide="next"><span
+                                    className="carousel-control-next-icon"/> <span className="sr-only">Next</span></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-
                 </div>
 
 
