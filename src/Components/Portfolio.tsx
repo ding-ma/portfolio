@@ -66,7 +66,7 @@ class Portfolio extends Component<IProps, IState> {
         ).map(function (project) {
             return (
                 <div key={project.title} className="portfolio-item col-lg-6">
-                    <a href={project.url} target="_blank">
+                    <a href={project.url} target="_blank" rel="noopener noreferrer">
                         <div className="item-wrap">
                             <img alt={project.title} src={project.image}/>
                             <div className="overlay">
