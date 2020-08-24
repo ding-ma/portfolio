@@ -23,7 +23,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm build
-deploy:
+  deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
