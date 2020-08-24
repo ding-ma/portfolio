@@ -17,7 +17,7 @@ class Resume extends Component<IProps, IState> {
                 "title": "Incoming Solutions Developer",
                 "location": "Montréal, Québec",
                 "years": "May 2020 - August 2020",
-                "description": "Will be developing an internal crypto currency based on Blockchain."
+                "description": ""
             },
             {
                 "company": "Environment and Climate Change Canada",
@@ -93,44 +93,42 @@ class Resume extends Component<IProps, IState> {
 
         return (
             <section id="resume">
-                <div className="row education">
-                    <div className="three columns header-col">
-                        <h1><span>Education</span></h1>
-                    </div>
+                <div className={"container-fluid"}>
 
-                    <div className="nine columns main-col">
-                        <div className="row item">
-                            <div className="twelve columns">
+                    <div className="row">
+                        <div className="col-md-3 offset-md-4">
+                            <h1>Education</h1>
+                        </div>
+                        <div className="col-md-4 offset-md-4">
+                            <div className="">
                                 {education}
                             </div>
                         </div>
                     </div>
-                </div>
 
 
-                <div className="row work">
-
-                    <div className="three columns header-col">
-                        <h1><span>Internships</span></h1>
+                    <div className="row">
+                        <div className="col-md-3 offset-md-4">
+                            <h1><span>Internships</span></h1>
+                        </div>
+                        <div className="col-md-4 offset-md-4">
+                            {works}
+                        </div>
                     </div>
 
-                    <div className="nine columns main-col">
-                        {works}
-                    </div>
-                </div>
 
+                    <div className="row">
+                        <div className="col-md-3 offset-md-4">
+                            <h1><span>Skills</span></h1>
+                        </div>
 
-                <div className="row skill">
-                    <div className="three columns header-col">
-                        <h1><span>Skills</span></h1>
-                    </div>
-
-                    <div className="nine columns main-col">
-                        <p>Here are some technologies that I have worked with</p>
-                        <div className="bars">
-                            <ul className="skills">
-                                {skills}
-                            </ul>
+                        <div className="col-md-4 offset-md-4">
+                            <p>Here are some technologies that I have worked with</p>
+                            <div className="">
+                                <ul className="">
+                                    {skills}
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

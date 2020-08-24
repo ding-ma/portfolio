@@ -11,5 +11,41 @@
   "Form.name": "Name",
   "Form.email": "Email",
   "Form.subject": "Subject",
-  "Form.message": "What would you like to chat about? Can be anything..."
+  "Form.message": "What would you like to chat about? Can be anything...",
+  "Work.desjardins.title": "Solutions Developer",
+  "Work.desjardins.dates": "May 2020 - August 2020",
+  "Work.desjardins.description": "Developed employee rewards system based on Blockchain",
+  "Work.eccc.title": "Data Analyst",
+  "Work.eccc.dates": "May 2019 - August 2019",
+  "Work.eccc.description": "Built data extraction tool and analysed data for meteorologists.",
+  "Education.mcgill": "McGill University",
+  "Education.mcgill.degree": "Software Engineering (B.Eng)",
+  "Education.mcgill.dates": "September 2018 - Present",
+  "Education.mcgill.description.pt1": "Involved in McGill Robotics design club.",
+  "Education.mcgill.description.pt2": "Tutoring at CSUS Helpdesk",
+  "Education.heritage": "Heritage College",
+  "Education.heritage.degree": "General DEC - Sciences",
+  "Education.heritage.dates": "September 2016 - May 2018",
+  "Education.heritage.description": "Graduated with honors",
+  "Arr": [
+    {
+      "school": "McGill University",
+      "degree": "Software Engineering (B.Eng)",
+      "graduated": "September 2018 - Present",
+      "location": "Montréal, Québec",
+      "description": [
+        "Involved in McGill Robotics design club.",
+        "Tutoring at CSUS HelpDesk"
+      ]
+    },
+    {
+      "school": "Heritage College",
+      "degree": "General DEC - Science",
+      "graduated": "September 2016 - May 2018",
+      "location": "Gatineau, Québec",
+      "description": [
+        "Graduated with honors"
+      ]
+    }
+  ]
 }

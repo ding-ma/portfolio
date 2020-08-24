@@ -149,7 +149,6 @@ class About extends Component<IProps, IState> {
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <Modal closeOnEsc={true} open={open} onClose={this.onCloseModal}

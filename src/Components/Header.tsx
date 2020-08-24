@@ -37,9 +37,9 @@ class Header extends Component<IProps, IState> {
         });
 
         return (
-            <header id="#home" className={"fullscreen"}>
+            <header id="home" className={"fullscreen"}>
 
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <nav className="navbar navbar-expand-lg navbar-light bg-lighter fixed-top">
 
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -95,7 +95,7 @@ class Header extends Component<IProps, IState> {
 
                 <div className="d-flex justify-content-center">
                     <ul className="social">
-                        <li className="smoothscroll"><a href="#about"><FontAwesomeIcon icon={faChevronCircleDown}/></a>
+                        <li><a href="#about"><FontAwesomeIcon icon={faChevronCircleDown}/></a>
                         </li>
                     </ul>
                 </div>
