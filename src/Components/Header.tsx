@@ -23,12 +23,12 @@ class Header extends Component<IProps, IState> {
 
                 <nav className="navbar navbar-expand-lg navbar-light bg-lighter fixed-top">
 
-                    <button className="navbar-toggler" type="button" data-toggle="collapse"
+                    <button className="navbar-toggler bg-lighter" type="button" data-toggle="collapse"
                             data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                             aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"/>
                     </button>
-                    <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
+                    <div className="collapse navbar-collapse bg-lighter" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <a className="nav-item nav-link active" href="#home">Home <span
                                 className="sr-only">(current)</span></a>

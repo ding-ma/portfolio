@@ -27,7 +27,7 @@ class Contact extends Component<IProps, IState> {
             },
             {
                 "name": "email",
-                "url": "mailto:ding.ma@mail.mcgill.ca",
+                "url": "mailto:ding.ma@mail.mcgill.ca?subject=Contact%20Ding&body=Hey%20Ding%2C%0D%0A%0D%0A%5Binsert%20your%20message%5D",
                 "icon": faEnvelope
             }
         ].map(function (network) {

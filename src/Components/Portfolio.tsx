@@ -5,6 +5,7 @@ import bird from "../Images/McGillBird.jpg"
 import dataVerif from "../Images/dataVerif.png"
 import scripts from "../Images/scripts.png"
 import website from "../Images/website.jpg"
+import "./Portfolio.css"
 
 interface IProps {
 }
@@ -20,6 +21,7 @@ class Portfolio extends Component<IProps, IState> {
             return el1[index] === el2[index] ? 0 : (el1[index] < el2[index] ? -1 : 1);
         }
 
+        //todo shrink and add some padding
         const projects: any[] = [
             {
                 "title": "AIDE - GUI tool",
@@ -63,12 +65,12 @@ class Portfolio extends Component<IProps, IState> {
             }
         ).map(function (project) {
             return (
-                <div key={project.title} className="">
+                <div key={project.title} className="portfolio-item col-lg-6">
                     <a href={project.url} target="_blank">
-                        <div className="">
+                        <div className="item-wrap">
                             <img alt={project.title} src={project.image}/>
-                            <div className="">
-                                <div className="">
+                            <div className="overlay">
+                                <div className="portfolio-item-meta">
                                     <h5>{project.title}</h5>
                                     <p>{project.category}</p>
                                 </div>
@@ -82,15 +84,17 @@ class Portfolio extends Component<IProps, IState> {
         return (
             <section id="portfolio">
 
-                <div className={"container-fluid"}>
-                    <div className="row">
-                        <div className="col-md-3 offset-md-4">
-                            <h1>Check Out Some of My Works.</h1>
-                            <div id="portfolio-wrapper" className="">
-                                {projects}
-                            </div>
-                        </div>
+                <div className={"container"}>
+
+                    <div className="col-md-6 offset-md-2">
+                        <h1>Check Out Some of My Works.</h1>
                     </div>
+
+                    <div id="portfolio-wrapper" className="row justify-content-around">
+                        {projects}
+                    </div>
+
+
                 </div>
 
 
