@@ -9,9 +9,10 @@ script:
 notifications:
   email: false
 deploy:
-  provider: pages
+  provider: firebase
   skip_cleanup: true
-  github_token: $github_token
+  token:
+    secure: $firebase_token
   local_dir: build
-  on:
-    branch: master
+    on:
+      branch: master

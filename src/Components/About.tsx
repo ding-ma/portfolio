@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import Modal from "react-responsive-modal";
 import {FormattedMessage} from "react-intl";
 import Button from 'react-bootstrap/Button';
-import IntlTextBox from "../translations/TextFieldTransalation";
-import IntlLabel from "../translations/InputTransalation";
+import IntlTextBox from "../Translations/TextFieldTransalation";
+import IntlLabel from "../Translations/InputTransalation";
 import profile from "../Images/profilepic.jpg"
 import "./About.css"
 

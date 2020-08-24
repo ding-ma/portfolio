@@ -4,7 +4,7 @@ import ReactNotification, {store} from 'react-notifications-component'
 import About from "./Components/About";
 import Header from "./Components/Header";
 import "./App.css"
-import LanguageSwitch from "./translations/LanguageSwitch";
+import LanguageSwitch from "./Translations/LanguageSwitch";
 import Resume from "./Components/Resume";
 import Portfolio from "./Components/Portfolio";
 import Footer from "./Components/Footer";
