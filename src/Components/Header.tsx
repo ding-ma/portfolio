@@ -57,10 +57,9 @@ class Header extends Component<IProps, IState> {
                         </div>
                     </div>
                 </nav>
-                <div className={"navbarPadding"}/>
-                <div className="">
-                    <div className="d-flex justify-content-center ">
 
+                <div className={"navbarPadding"}/>
+                    <div className="d-flex justify-content-center ">
                         <h1 className="responsive-headline ">
                             <Typed
                                 strings={[
@@ -91,7 +90,7 @@ class Header extends Component<IProps, IState> {
                             {networks}
                         </ul>
                     </div>
-                </div>
+
 
                 <div className="d-flex justify-content-center">
                     <ul className="social">

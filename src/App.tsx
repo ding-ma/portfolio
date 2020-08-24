@@ -6,16 +6,18 @@ import Header from "./Components/Header";
 import "./App.css"
 import LanguageSwitch from "./translations/LanguageSwitch";
 import Resume from "./Components/Resume";
+import Portfolio from "./Components/Portfolio";
+import Footer from "./Components/Footer";
 
-interface IProps{
+interface IProps {
 
 }
 
-interface IState{
-    locationOnPage:String
+interface IState {
+    locationOnPage: String
 }
 
-class App extends Component<IProps, IState>{
+class App extends Component<IProps, IState> {
 
     handleNotificationSuccess = () => {
         store.addNotification({
@@ -37,13 +39,15 @@ class App extends Component<IProps, IState>{
 
   render() {
       return(
-        <div className="App">
-            <button type="button" className="btn btn-dark fixed"> <LanguageSwitch/></button>
-            <ReactNotification/>
-            <Header/>
-            <About handleNotification={this.handleNotificationSuccess()}/>
-            <Resume/>
-        </div>
+          <div className="App">
+              <button type="button" className="btn btn-dark fixed"><LanguageSwitch/></button>
+              <ReactNotification/>
+              <Header/>
+              <About handleNotification={this.handleNotificationSuccess()}/>
+              <Resume/>
+              <Portfolio/>
+              <Footer/>
+          </div>
     )
   }
 }
