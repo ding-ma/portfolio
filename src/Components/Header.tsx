@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import Typed from 'react-typed';
 import {FormattedMessage} from 'react-intl';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 import {faChevronCircleDown} from '@fortawesome/free-solid-svg-icons'
 import "./Header.css"
+import Contact from "./Contact";
 
 
 interface IProps {
@@ -17,24 +17,6 @@ interface IState {
 class Header extends Component<IProps, IState> {
 
     render() {
-
-        const networks: JSX.Element[] = [
-            {
-                "name": "linkedin",
-                "url": "https://www.linkedin.com/in/ding--ma/",
-                "icon": faLinkedin
-            },
-            {
-                "name": "github",
-                "url": "https://github.com/ding-ma",
-                "icon": faGithub
-            }
-        ].map(function (network) {
-            return <li key={network.name}><a href={network.url} target="_blank"
-                                             rel="noopener noreferrer"><FontAwesomeIcon
-                icon={network.icon}/></a>
-            </li>;
-        });
 
         return (
             <header id="home" className={"fullscreen"}>
@@ -59,37 +41,33 @@ class Header extends Component<IProps, IState> {
                 </nav>
 
                 <div className={"navbarPadding"}/>
-                    <div className="d-flex justify-content-center ">
-                        <h1 className="responsive-headline ">
-                            <Typed
-                                strings={[
-                                    'Hi, I\'m',
-                                    'Bonjour, je suis',
-                                    '你好, 我是'
-                                ]}
-                                typeSpeed={80}
-                                backSpeed={50}
-                                showCursor={false}
-                                loop
-                            /> Ding<span className="yellowText">.</span></h1>
-                    </div>
-                    <hr/>
-                    <div className="d-flex justify-content-center">
-                        <div className="row">
-                            <div className="col-md-auto centerText">
-                                <FormattedMessage id="header.introduction" values={{province: <i>belle province</i>}}/>
-                            </div>
+                <div className="d-flex justify-content-center ">
+                    <h1 className="responsive-headline ">
+                        <Typed
+                            strings={[
+                                'Hi, I\'m',
+                                'Bonjour, je suis',
+                                '你好, 我是'
+                            ]}
+                            typeSpeed={80}
+                            backSpeed={50}
+                            showCursor={false}
+                            loop
+                        /> Ding<span className="yellowText">.</span></h1>
+                </div>
+                <hr/>
+                <div className="d-flex justify-content-center">
+                    <div className="row">
+                        <div className="col-md-auto centerText">
+                            <FormattedMessage id="header.introduction" values={{province: <i>belle province</i>}}/>
                         </div>
-
                     </div>
-                    <hr/>
-                    <div className={"navbarPadding"}/>
 
-                    <div className="d-flex justify-content-center">
-                        <ul className="social">
-                            {networks}
-                        </ul>
-                    </div>
+                </div>
+                <hr/>
+                <div className={"navbarPadding"}/>
+
+                <Contact/>
 
 
                 <div className="d-flex justify-content-center">
