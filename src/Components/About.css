@@ -28,3 +28,13 @@
     margin: auto;
     text-align: justify;
 }
+
+ul {
+    list-style-type: none;
+}
+
+form {
+    padding-right: 35px;
+    backdrop-filter: drop-shadow(4px 4px 10px blue);
+
+}

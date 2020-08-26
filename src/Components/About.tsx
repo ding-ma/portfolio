@@ -37,11 +37,11 @@ class About extends Component<IProps, IState> {
         const open = this.state.isFormOpen
         const handleNotification = this.props
 
+        //todo, find a way to colapse navbar
         const renderForm = (isOpen: ((event: React.FormEvent<HTMLFormElement>) => void) | undefined, notification: any) => {
             //mXve9YwHNaBnKLA9/3TzwVMOQYK+l03anPJsAL+lnUg=
             return (
-                <div id="container">
-
+                <div>
                     <form
                         id="form2"
                         name="form2"
@@ -55,32 +55,42 @@ class About extends Component<IProps, IState> {
                         onSubmit={isOpen}
                     >
                         <ul>
-                            <li className="hide">
-                                <input type="hidden" id="idstamp" name="idstamp"
-                                       value="mXve9YwHNaBnKLA9/3TzwVMOQYK+l03anPJsAL+lnUg="/>
-                            </li>
 
-                            <li id="foli4" data-wufoo-field="" data-field-type="text">
-                                <IntlLabel labelId={"Field4"} labelName={"Field4"} placeholderId={"Form.name"}/>
-                            </li>
+                            <input type="hidden" id="idstamp" name="idstamp"
+                                   value="mXve9YwHNaBnKLA9/3TzwVMOQYK+l03anPJsAL+lnUg="/>
 
-                            <li id="foli2" className="notranslate">
-                                <IntlLabel labelId={"Field2"} labelName={"Field2"} placeholderId={"Form.email"}/>
-                            </li>
+                            <div className="form-group">
+                                <h2><FormattedMessage id={"About.button.contact"}/></h2>
+                                <li id="foli4" data-wufoo-field="" data-field-type="text">
+                                    <IntlLabel labelId={"Field4"} labelName={"Field4"} placeholderId={"Form.name"}/>
+                                </li>
+                            </div>
 
-                            <li id="foli5" data-wufoo-field="" data-field-type="text">
-                                <IntlLabel labelId={"Field5"} labelName={"Field5"} placeholderId={"Form.subject"}/>
-                            </li>
+                            <div className="form-group">
+                                <li id="foli2" className="notranslate">
+                                    <IntlLabel labelId={"Field2"} labelName={"Field2"} placeholderId={"Form.email"}/>
+                                </li>
+                            </div>
 
+                            <div className="form-group">
+                                <li id="foli5" data-wufoo-field="" data-field-type="text">
+                                    <IntlLabel labelId={"Field5"} labelName={"Field5"} placeholderId={"Form.subject"}/>
+                                </li>
+                            </div>
 
-                            <li id="foli1">
-                                <IntlTextBox labelId={"Field1"} labelName={"Field1"} placeholderId={"Form.message"}/>
-                            </li>
+                            <div className="form-group">
+                                <li id="foli1">
+                                    <IntlTextBox labelId={"Field1"} labelName={"Field1"}
+                                                 placeholderId={"Form.message"}/>
+                                </li>
+                            </div>
 
-                            <li className="buttons ">
-                                <input id="saveForm" name="saveForm"
-                                       type="submit" value="Submit" onClick={notification}/>
-                            </li>
+                            <div className="form-group">
+                                <li className="buttons ">
+                                    <input id="saveForm" name="saveForm"
+                                           type="submit" value="Submit" onClick={notification}/>
+                                </li>
+                            </div>
 
                         </ul>
                     </form>
@@ -145,7 +155,6 @@ class About extends Component<IProps, IState> {
                 <Modal closeOnEsc={true} open={open} onClose={this.onCloseModal}
                        showCloseIcon={false}
                        closeOnOverlayClick={true} center={true}>
-                    <h2><FormattedMessage id={"About.button.contact"}/></h2>
                     {renderForm(this.onCloseModal, handleNotification)}
                 </Modal>
             </section>

@@ -8,6 +8,7 @@ const IntlLabel = ({labelId, labelName, placeholderId, intl}:
         name={labelName}
         placeholder={intl.formatMessage({id: placeholderId})}
         maxLength={255} tabIndex={0}
+        className="form-control"
         type="text"
     />
 )
