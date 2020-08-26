@@ -6,12 +6,11 @@ const IntlTextBox = ({labelId, labelName, placeholderId, intl}:
     <textarea
         id={labelId}
         name={labelName}
-        className=""
+        className="form-control"
         rows={10} cols={75}
         tabIndex={0}
         spellCheck="true"
         placeholder={intl.formatMessage({id: placeholderId})}
-
     />
 )
 
