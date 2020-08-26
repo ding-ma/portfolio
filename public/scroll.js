@@ -1,4 +1,4 @@
-//todo only on bigger screen
+
 window.onscroll = function () {
     var scrollY = window.pageYOffset || document.documentElement.scrollTop;
     var header = document.querySelector('nav');
@@ -10,14 +10,17 @@ window.onscroll = function () {
     this.lastScroll = scrollY;
 }
 
-$('.navbar-nav>li>a').on('click', function () {
-    $('.navbar-collapse').collapse('hide');
+$(function () {
+    var navMain = $(".navbar-collapse"); // avoid dependency on #id
+    navMain.on("click", "a:not([data-toggle])", null, function () {
+        navMain.collapse('hide');
+    });
 });
 
 //doesnt work to hide navbar with modal
-$(document).ready(function () {
-    $("button").click(function () {
-        console.log("123");
-        $('.navbar-collapse').collapse('hide');
-    });
-});
+// $(document).ready(function () {
+//     $("button").click(function () {
+//         console.log("123");
+//         $('.navbar-collapse').collapse('hide');
+//     });
+// });
