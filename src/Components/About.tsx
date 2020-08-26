@@ -9,7 +9,6 @@ import "./About.css"
 
 interface IProps {
     handleNotification: any
-
 }
 
 interface IState {
@@ -41,7 +40,7 @@ class About extends Component<IProps, IState> {
         const renderForm = (isOpen: ((event: React.FormEvent<HTMLFormElement>) => void) | undefined, notification: any) => {
             //mXve9YwHNaBnKLA9/3TzwVMOQYK+l03anPJsAL+lnUg=
             return (
-                <div>
+                <div className={".collapse.navbar-collapse"}>
                     <form
                         id="form2"
                         name="form2"
