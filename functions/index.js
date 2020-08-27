@@ -1,19 +1,20 @@
 const functions = require('firebase-functions');
 const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(functions.config().sendgrid.key);
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-exports.helloWorld = functions.https.onRequest((request, response) => {
-  functions.logger.info("Hello logs!", {structuredData: true});
-  sgMail.setApiKey(functions.config().sendgrid.key);
+
+exports.contactMe = functions.https.onRequest((request, response) => {
+  if(request.method !== "POST"){
+    response.status(400).send('Please send a POST request');
+    return;
+  }
+  let data = request.body;
   const msg = {
     to: 'ma.ding.dm@gmail.com',
-    from: 'test@example.com',
-    subject: 'Sending with Twilio SendGrid is Fun',
-    text: 'and easy to do anywhere, even with Node.js',
-    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+    from: data["from"],
+    subject: data["subject"],
+    text: data["subject"],
   };
   sgMail.send(msg);
-  response.send("Email sent");
+  response.status(200).send('Email sent!')
 });
