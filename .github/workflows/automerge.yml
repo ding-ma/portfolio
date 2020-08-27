@@ -1,4 +1,4 @@
-name: automerge if build passes
+name: automerge and deploy
 on:
   pull_request:
     types:
