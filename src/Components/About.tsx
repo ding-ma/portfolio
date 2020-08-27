@@ -13,15 +13,30 @@ interface IProps {
 
 interface IState {
     isFormOpen: boolean
+    name: string
+    email: string
+    subject: string
+    msg: string
 }
+
+declare type eventType = { target: { value: string; }; }
 
 class About extends Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
         this.state = {
-            isFormOpen: false
-        }
+            isFormOpen: false,
+            name: "",
+            email: "",
+            subject: "",
+            msg: ""
+        };
+        this.handleName = this.handleName.bind(this)
+        this.handleEmail = this.handleEmail.bind(this)
+        this.handleSubject = this.handleSubject.bind(this)
+        this.handleMsg = this.handleMsg.bind(this)
+        this.contactMe = this.contactMe.bind(this)
     }
 
     openOnModal = () => {
@@ -32,65 +47,56 @@ class About extends Component<IProps, IState> {
         this.setState({isFormOpen: false})
     }
 
+    handleName(event: eventType) {
+        this.setState({name: event.target.value})
+    }
+
+    handleEmail(event: eventType) {
+        this.setState({email: event.target.value})
+    }
+
+    handleSubject(event: eventType) {
+        this.setState({subject: event.target.value})
+    }
+
+    handleMsg(event: eventType) {
+        this.setState({msg: event.target.value})
+    }
+
     render() {
         const open = this.state.isFormOpen
         const {handleNotification} = this.props
 
         //todo, find a way to colapse navbar
         const renderForm = (isOpen: ((event: React.FormEvent<HTMLFormElement>) => void) | undefined, notification: any) => {
-            //mXve9YwHNaBnKLA9/3TzwVMOQYK+l03anPJsAL+lnUg=
             return (
                 <div className={".collapse.navbar-collapse"}>
-                    <form
-                        id="form2"
-                        name="form2"
-                        acceptCharset="UTF-8"
-                        autoComplete="off"
-                        target="_blank"
-                        encType="multipart/form-data"
-                        method="post"
-                        noValidate
-                        action="https://dingma.wufoo.com/forms/ma5u4611pc2t7b/#public"
-                        onSubmit={isOpen}
-                    >
-                        <ul>
+                    <form noValidate={true} onSubmit={this.contactMe}>
+                        <div className="form-group">
+                            <h2><FormattedMessage id={"About.button.contact"}/></h2>
+                            <IntlLabel labelId={"Field4"} labelName={"Field4"} placeholderId={"Form.name"}
+                                       onchange={this.handleName}/>
+                        </div>
 
-                            <input type="hidden" id="idstamp" name="idstamp"
-                                   value="mXve9YwHNaBnKLA9/3TzwVMOQYK+l03anPJsAL+lnUg="/>
+                        <div className="form-group">
+                            <IntlLabel labelId={"Field2"} labelName={"Field2"} placeholderId={"Form.email"}
+                                       onchange={this.handleEmail}/>
+                        </div>
 
-                            <div className="form-group">
-                                <h2><FormattedMessage id={"About.button.contact"}/></h2>
-                                <li id="foli4" data-wufoo-field="" data-field-type="text">
-                                    <IntlLabel labelId={"Field4"} labelName={"Field4"} placeholderId={"Form.name"}/>
-                                </li>
-                            </div>
+                        <div className="form-group">
+                            <IntlLabel labelId={"Field5"} labelName={"Field5"} placeholderId={"Form.subject"}
+                                       onchange={this.handleSubject}/>
+                        </div>
 
-                            <div className="form-group">
-                                <li id="foli2" className="notranslate">
-                                    <IntlLabel labelId={"Field2"} labelName={"Field2"} placeholderId={"Form.email"}/>
-                                </li>
-                            </div>
+                        <div className="form-group">
+                            <IntlTextBox labelId={"Field1"} labelName={"Field1"}
+                                         placeholderId={"Form.message"} onchange={this.handleMsg}/>
+                        </div>
 
-                            <div className="form-group">
-                                <li id="foli5" data-wufoo-field="" data-field-type="text">
-                                    <IntlLabel labelId={"Field5"} labelName={"Field5"} placeholderId={"Form.subject"}/>
-                                </li>
-                            </div>
-
-                            <div className="form-group">
-                                <li id="foli1">
-                                    <IntlTextBox labelId={"Field1"} labelName={"Field1"}
-                                                 placeholderId={"Form.message"}/>
-                                </li>
-                            </div>
-
-                            <div className="form-group">
-                                <li className="buttons ">
-                                    <input id="saveForm" name="saveForm"
-                                           type="submit" value="Submit" onClick={notification}/>
-                                </li>
-                            </div>
-                        </ul>
+                        <div className="form-group">
+                            <input id="saveForm" name="saveForm"
+                                   type="submit" value="Contact!" onClick={notification}/>
+                        </div>
                     </form>
                 </div>
             )
@@ -149,15 +155,40 @@ class About extends Component<IProps, IState> {
                         </div>
                     </div>
                 </div>
-
                 <Modal closeOnEsc={true} open={open} onClose={this.onCloseModal}
                        showCloseIcon={false}
                        closeOnOverlayClick={true} center={true}>
                     {renderForm(this.onCloseModal, handleNotification)}
                 </Modal>
             </section>
-
         )
+    }
+
+    contactMe() {
+        console.log(JSON.stringify({
+            name: this.state.name,
+            email: this.state.email,
+            subject: this.state.subject,
+            msg: this.state.msg
+        }))
+        fetch("https://us-central1-portfolio-ding.cloudfunctions.net/contactMe", {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: this.state.name,
+                email: this.state.email,
+                subject: this.state.subject,
+                msg: this.state.msg
+            })
+        }).then(resp => {
+            if (resp.status === 200) {
+
+            } else {
+
+            }
+        })
     }
 }
 

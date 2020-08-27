@@ -1,15 +1,21 @@
 import React from 'react'
 import {injectIntl} from 'react-intl'
+import TextField from '@material-ui/core/TextField';
 
-const IntlLabel = ({labelId, labelName, placeholderId, intl}:
-                       { labelId: string, labelName: string, placeholderId: string, intl: any }) => (
-    <input
+const IntlLabel = ({labelId, labelName, placeholderId, onchange, intl}:
+                       { labelId: string, labelName: string, placeholderId: string, onchange: React.ComponentState, intl: any }) => (
+    <TextField
+        variant="outlined"
+        margin="normal"
+        required={true}
+        fullWidth
         id={labelId}
+        label={intl.formatMessage({id: placeholderId})}
         name={labelName}
-        placeholder={intl.formatMessage({id: placeholderId})}
-        maxLength={255} tabIndex={0}
-        className="form-control"
-        type="text"
+        autoComplete={labelName}
+        autoFocus
+        onChange={onchange}
+
     />
 )
 
