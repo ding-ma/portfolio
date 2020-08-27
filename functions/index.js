@@ -11,9 +11,9 @@ exports.contactMe = functions.https.onRequest((request, response) => {
   let data = request.body;
   const msg = {
     to: 'ma.ding.dm@gmail.com',
-    from: data["from"],
+    from: 'contact.me@portfolio-ding.firebaseapp.com',
     subject: data["subject"],
-    text: data["subject"],
+    text: data["msg"],
   };
   sgMail.send(msg);
   response.status(200).send('Email sent!')

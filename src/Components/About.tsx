@@ -34,7 +34,7 @@ class About extends Component<IProps, IState> {
 
     render() {
         const open = this.state.isFormOpen
-        const handleNotification = this.props
+        const {handleNotification} = this.props
 
         //todo, find a way to colapse navbar
         const renderForm = (isOpen: ((event: React.FormEvent<HTMLFormElement>) => void) | undefined, notification: any) => {
@@ -90,7 +90,6 @@ class About extends Component<IProps, IState> {
                                            type="submit" value="Submit" onClick={notification}/>
                                 </li>
                             </div>
-
                         </ul>
                     </form>
                 </div>
