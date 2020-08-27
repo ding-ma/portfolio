@@ -34,8 +34,8 @@ ul {
 }
 
 form {
-    padding-right: 35px;
     backdrop-filter: drop-shadow(4px 4px 10px blue);
+    width: 750px;
 
 }
 

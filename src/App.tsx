@@ -40,10 +40,10 @@ class App extends Component<IProps, IState> {
   render() {
       return(
           <div className="App">
-              <button type="button" className="btn btn-dark fixed"><LanguageSwitch/></button>
               <ReactNotification/>
+              <button type="button" className="btn btn-dark fixed"><LanguageSwitch/></button>
               <Header/>
-              <About handleNotification={this.handleNotificationSuccess()}/>
+              <About handleNotification={this.handleNotificationSuccess}/>
               <Resume/>
               <Portfolio/>
               <Footer/>
