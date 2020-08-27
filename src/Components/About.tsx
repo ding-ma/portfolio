@@ -177,16 +177,16 @@ class About extends Component<IProps, IState> {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                name: this.state.name,
-                email: this.state.email,
-                subject: this.state.subject,
-                msg: this.state.msg
+                "name": this.state.name,
+                "subject": this.state.subject,
+                "message": this.state.msg,
+                "email": this.state.email
             })
         }).then(resp => {
             if (resp.status === 200) {
-
+                console.log("Success")
             } else {
-
+                console.log(resp)
             }
         })
     }
