@@ -29,7 +29,7 @@ class App extends Component<IProps, IState> {
             animationIn: ['animated', 'fadeIn'],
             animationOut: ['animated', 'fadeout'],
             dismiss: {
-                duration: 7000,
+                duration: 3000,
                 showIcon: true,
                 pauseOnHover: true
             },

@@ -36,7 +36,18 @@ ul {
 form {
     backdrop-filter: drop-shadow(4px 4px 10px blue);
     width: 750px;
+}
 
+@media (max-width: 981px) {
+    form {
+        width: 500px
+    }
+}
+
+@media (max-width: 600px) {
+    form {
+        width: 350px;
+    }
 }
 
 .form-control:focus {

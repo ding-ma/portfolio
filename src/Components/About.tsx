@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
+
 import Modal from "react-responsive-modal";
 import {FormattedMessage} from "react-intl";
 import Button from 'react-bootstrap/Button';
-import IntlTextBox from "../Translations/TextFieldTransalation";
-import IntlLabel from "../Translations/InputTransalation";
 import profile from "../Images/profilepic.jpg"
 import "./About.css"
+import IntlLabel from "./InputTranslation";
 
 interface IProps {
     handleNotification: any
@@ -64,33 +64,31 @@ class About extends Component<IProps, IState> {
     }
 
     render() {
-        const open = this.state.isFormOpen
-        const {handleNotification} = this.props
-
         //todo, find a way to colapse navbar
-        const renderForm = (isOpen: ((event: React.FormEvent<HTMLFormElement>) => void) | undefined, notification: any) => {
+
+        const renderForm = (isOpen: ((event: React.FormEvent<HTMLFormElement>) => void), notification: any) => {
             return (
                 <div className={".collapse.navbar-collapse"}>
-                    <form noValidate={true} onSubmit={this.contactMe}>
+                    <form noValidate={true} onSubmit={this.contactMe && isOpen} autoComplete="off">
                         <div className="form-group">
                             <h2><FormattedMessage id={"About.button.contact"}/></h2>
                             <IntlLabel labelId={"Field4"} labelName={"Field4"} placeholderId={"Form.name"}
-                                       onchange={this.handleName}/>
+                                       onchange={this.handleName} isBox={false}/>
                         </div>
 
                         <div className="form-group">
                             <IntlLabel labelId={"Field2"} labelName={"Field2"} placeholderId={"Form.email"}
-                                       onchange={this.handleEmail}/>
+                                       onchange={this.handleEmail}  isBox={false}/>
                         </div>
 
                         <div className="form-group">
                             <IntlLabel labelId={"Field5"} labelName={"Field5"} placeholderId={"Form.subject"}
-                                       onchange={this.handleSubject}/>
+                                       onchange={this.handleSubject}  isBox={false}/>
                         </div>
 
                         <div className="form-group">
-                            <IntlTextBox labelId={"Field1"} labelName={"Field1"}
-                                         placeholderId={"Form.message"} onchange={this.handleMsg}/>
+                            <IntlLabel labelId={"Field1"} labelName={"Field1"} placeholderId={"Form.message"}
+                                       onchange={this.handleMsg} isBox={true}/>
                         </div>
 
                         <div className="form-group">
@@ -102,6 +100,8 @@ class About extends Component<IProps, IState> {
             )
         }
 
+        const open = this.state.isFormOpen
+        const {handleNotification} = this.props
         return (
             <section id="about">
                 <div className="container-fluid">
@@ -110,7 +110,7 @@ class About extends Component<IProps, IState> {
                     </div>
 
                     <div className="row">
-                        <div className="col-md-3 offset-md-4">
+                        <div className="col-md-3 offset-md-3">
                             <h2><FormattedMessage id={"About"}/></h2>
                         </div>
                         <div className="col-md-4 offset-md-4">
@@ -122,9 +122,10 @@ class About extends Component<IProps, IState> {
                     </div>
 
                     <div className="row">
-                        <div className="col-sm-5 offset-md-4">
+                        <div className="col-sm-3 offset-md-3">
                             <h2><FormattedMessage id={"About.contact"}/></h2>
-
+                        </div>
+                        <div className="col-sm-5 offset-md-4">
                             <div className="row">
                                 <div className="col-4 col-sm-6">
                                     <p className="address">
@@ -169,7 +170,7 @@ class About extends Component<IProps, IState> {
             name: this.state.name,
             email: this.state.email,
             subject: this.state.subject,
-            msg: this.state.msg
+            msg: this.state.msg,
         }))
         fetch("https://us-central1-portfolio-ding.cloudfunctions.net/contactMe", {
             method: 'post',
@@ -187,6 +188,7 @@ class About extends Component<IProps, IState> {
                 console.log("Success")
             } else {
                 console.log(resp)
+
             }
         })
     }

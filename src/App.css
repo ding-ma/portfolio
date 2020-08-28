@@ -30,3 +30,17 @@ header .social li a, footer .social li a {
 header .social li a:hover, footer .social li a:hover {
     color: #b0a200;
 }
+
+
+h1,h2  {
+    border-bottom: 4px solid #b0a200;
+    display: block;
+    line-height: 40px;
+    list-style-type: none;
+    margin: 20px 0;
+    text-decoration: none;
+}
+
+#home h1{
+    border-bottom: 4px solid white;
+}

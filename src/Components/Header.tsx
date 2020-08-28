@@ -40,7 +40,7 @@ class Header extends Component<IProps, IState> {
 
                 <div className={"navbarPadding"}/>
                 <div className="d-flex justify-content-center ">
-                    <h1 className="responsive-headline ">
+                    <h1 className="responsive-headline">
                         <Typed
                             strings={[
                                 'Hi, I\'m',

@@ -4,10 +4,11 @@ const sgMail = require('@sendgrid/mail');
 
 exports.contactMe = functions.https.onRequest((req, res) => {
   sgMail.setApiKey(functions.config().sendgrid.key);
-
   const { name, email, message, subject } = req.body;
-  return cors(req, res, () => {
-    const text = `<div>
+
+  try{
+    return cors(req, res, () => {
+      const text = `<div>
       <h4>Information</h4>
       <ul>
         <li>
@@ -23,17 +24,18 @@ exports.contactMe = functions.https.onRequest((req, res) => {
       <h4>Message</h4>
       <p>${message || ""}</p>
     </div>`;
-    const msg = {
-      to: "ma.ding.dm@gmail.com",
-      from: "no-reply@dingma.ca",
-      subject: `${name} sent you a new message from dingma.ca`,
-      text: text,
-      html: text
-    };
-    sgMail.send(msg);
-    res.status(200).send("success");
-  }).catch(() => {
-    res.status(500).send("error");
-  });
+      const msg = {
+        to: "ma.ding.dm@gmail.com",
+        from: "no-reply@dingma.ca",
+        subject: `${name} sent you a new message from dingma.ca`,
+        text: text,
+        html: text
+      };
+      sgMail.send(msg);
+      res.status(200).send("success");
+    })
+  } catch (e) {
+    res.status(500).send(e.getMessage);
+  }
 });
 

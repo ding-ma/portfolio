@@ -29,7 +29,7 @@ class Resume extends Component<IProps, IState> {
             }
         ].map(function (work) {
 
-            return (<div key={work.title}><h3><FormattedMessage id={work.title}/></h3>
+            return (<div key={work.title}><h4><FormattedMessage id={work.title}/></h4>
                 <p><FormattedMessage id={work.company}/><span>&bull;</span>
                     <em className="date"><FormattedMessage id={work.years}/></em><br/>
                     <em className="date">{work.location}</em>
@@ -81,7 +81,7 @@ class Resume extends Component<IProps, IState> {
             }
 
             return (
-                <div key={education.school}><h3><FormattedMessage id={education.school}/></h3>
+                <div key={education.school}><h4><FormattedMessage id={education.school}/></h4>
                     <p className="info"><FormattedMessage id={education.degree}/><span>&bull;</span>
                         <em className="date"><FormattedMessage id={education.graduated}/></em><br/>
                         <em className="date">{education.location}</em>
@@ -97,7 +97,7 @@ class Resume extends Component<IProps, IState> {
                 <div className={"container-fluid"}>
 
                     <div className="row">
-                        <div className="col-md-3 offset-md-4">
+                        <div className="col-md-3 offset-md-3">
                             <h1><FormattedMessage id={"Education"}/></h1>
                         </div>
                         <div className="col-md-4 offset-md-4">
@@ -109,7 +109,7 @@ class Resume extends Component<IProps, IState> {
 
 
                     <div className="row">
-                        <div className="col-md-3 offset-md-4">
+                        <div className="col-md-3 offset-md-3">
                             <h1><span><FormattedMessage id={"Internship"}/></span></h1>
                         </div>
                         <div className="col-md-4 offset-md-4">
@@ -119,7 +119,7 @@ class Resume extends Component<IProps, IState> {
 
 
                     <div className="row">
-                        <div className="col-md-3 offset-md-4">
+                        <div className="col-md-3 offset-md-3">
                             <h1><span><FormattedMessage id={"Education"}/></span></h1>
                         </div>
 
