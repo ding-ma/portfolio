@@ -66,10 +66,10 @@ class About extends Component<IProps, IState> {
     render() {
         //todo, find a way to colapse navbar
 
-        const renderForm = (isOpen: ((event: React.FormEvent<HTMLFormElement>) => void), notification: any) => {
+        const renderForm = (isOpen: ((event: React.FormEvent<HTMLFormElement>) => void)) => {
             return (
-                <div className={".collapse.navbar-collapse"}>
-                    <form noValidate={true} onSubmit={this.contactMe && isOpen} autoComplete="off">
+
+                    <form noValidate={true} onSubmit={isOpen && this.contactMe} autoComplete="off">
                         <div className="form-group">
                             <h2><FormattedMessage id={"About.button.contact"}/></h2>
                             <IntlLabel labelId={"Field4"} labelName={"Field4"} placeholderId={"Form.name"}
@@ -92,16 +92,14 @@ class About extends Component<IProps, IState> {
                         </div>
 
                         <div className="form-group">
-                            <input id="saveForm" name="saveForm"
-                                   type="submit" value="Contact!" onClick={notification}/>
+                            <Button variant="secondary" className="button" type="submit"
+                                onClick={e => this.props.handleNotification()}> Contact! </Button>
                         </div>
                     </form>
-                </div>
             )
         }
 
         const open = this.state.isFormOpen
-        const {handleNotification} = this.props
         return (
             <section id="about">
                 <div className="container-fluid">
@@ -138,7 +136,6 @@ class About extends Component<IProps, IState> {
                                     </p>
                                 </div>
 
-
                                 <div className="row justify-content-center">
                                     <div className="col-4">
                                         <Button variant="secondary" className="button">
@@ -159,7 +156,7 @@ class About extends Component<IProps, IState> {
                 <Modal closeOnEsc={true} open={open} onClose={this.onCloseModal}
                        showCloseIcon={false}
                        closeOnOverlayClick={true} center={true}>
-                    {renderForm(this.onCloseModal, handleNotification)}
+                    {renderForm(this.onCloseModal)}
                 </Modal>
             </section>
         )
@@ -188,7 +185,6 @@ class About extends Component<IProps, IState> {
                 console.log("Success")
             } else {
                 console.log(resp)
-
             }
         })
     }
