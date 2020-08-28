@@ -10,8 +10,8 @@ Revamp of the first iteration of [dingma.ca](http://dingma.ca/).
 * Github pages :arrow_right: Firebase
 * TravisCI :arrow_right: Github Actions (allows different workflows with). Only deploys master automatically to Firebase.
 * Regular CSS :arrow_right: Bootstrap 4. Flex-box is :crown:
-* Wofoo :arrow_right: SendGrid API. Github-Pages does not allow `Post` requests for sending a form. 
-There is more flexibility with Firebase. **In progress!**
+* Wofoo :arrow_right: SendGrid API with Firebase Function. Github-Pages does not allow `Post` requests for sending a form. 
+There is more flexibility with Firebase.
 
 ## Installation & Set Up
 1. Clone this repo
