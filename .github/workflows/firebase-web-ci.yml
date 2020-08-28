@@ -1,4 +1,4 @@
-name: Master CI & Firebase Deploy Web App
+name: Deploy Web App to Firebase
 on:
   push:
     branches:
