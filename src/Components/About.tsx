@@ -8,7 +8,8 @@ import "./About.css"
 import IntlLabel from "./InputTranslation";
 
 interface IProps {
-    handleNotification: any
+    handleNotificationSuccess: any
+    handleNotificationFailure: any
 }
 
 interface IState {
@@ -66,10 +67,12 @@ class About extends Component<IProps, IState> {
     render() {
         //todo, find a way to colapse navbar
 
-        const renderForm = (isOpen: ((event: React.FormEvent<HTMLFormElement>) => void)) => {
+        const closeFormAndNotify = () => {
+            this.contactMe()
+        }
+        const renderForm = () => {
             return (
-
-                    <form noValidate={true} onSubmit={isOpen && this.contactMe} autoComplete="off">
+                    <form noValidate={true} autoComplete="off" id={"contact"}>
                         <div className="form-group">
                             <h2><FormattedMessage id={"About.button.contact"}/></h2>
                             <IntlLabel labelId={"Field4"} labelName={"Field4"} placeholderId={"Form.name"}
@@ -92,14 +95,13 @@ class About extends Component<IProps, IState> {
                         </div>
 
                         <div className="form-group">
-                            <Button variant="secondary" className="button" type="submit"
-                                onClick={e => this.props.handleNotification()}> Contact! </Button>
+                            <Button variant="secondary" className="button"
+                                onClick={() => closeFormAndNotify()}> Contact! </Button>
                         </div>
                     </form>
             )
         }
 
-        const open = this.state.isFormOpen
         return (
             <section id="about">
                 <div className="container-fluid">
@@ -153,10 +155,10 @@ class About extends Component<IProps, IState> {
                         </div>
                     </div>
                 </div>
-                <Modal closeOnEsc={true} open={open} onClose={this.onCloseModal}
+                <Modal closeOnEsc={true} open={this.state.isFormOpen} onClose={this.onCloseModal}
                        showCloseIcon={false}
                        closeOnOverlayClick={true} center={true}>
-                    {renderForm(this.onCloseModal)}
+                    {renderForm()}
                 </Modal>
             </section>
         )
@@ -167,7 +169,7 @@ class About extends Component<IProps, IState> {
             name: this.state.name,
             email: this.state.email,
             subject: this.state.subject,
-            msg: this.state.msg,
+            msg: this.state.msg
         }))
         fetch("https://us-central1-portfolio-ding.cloudfunctions.net/contactMe", {
             method: 'post',
@@ -181,10 +183,14 @@ class About extends Component<IProps, IState> {
                 "email": this.state.email
             })
         }).then(resp => {
+            this.onCloseModal();
+            console.log(resp)
             if (resp.status === 200) {
                 console.log("Success")
+                this.props.handleNotificationSuccess()
             } else {
-                console.log(resp)
+                console.log("Failure")
+                this.props.handleNotificationFailure()
             }
         })
     }

@@ -10,7 +10,6 @@ import Portfolio from "./Components/Portfolio";
 import Footer from "./Components/Footer";
 
 interface IProps {
-
 }
 
 interface IState {
@@ -37,13 +36,32 @@ class App extends Component<IProps, IState> {
         })
     };
 
+    handleNotificationFailure = () => {
+        store.addNotification({
+            title: 'Email Not Sent!',
+            message: 'Something went wrong! Please email me at ding.ma@mail.mcgill.ca',
+            type: 'danger',
+            container: 'top-right',
+            insert: 'bottom',
+            animationIn: ['animated', 'fadeIn'],
+            animationOut: ['animated', 'fadeout'],
+            dismiss: {
+                duration: 5000,
+                showIcon: true,
+                pauseOnHover: true
+            },
+            width: 300
+        })
+    };
+
   render() {
       return(
           <div className="App">
               <ReactNotification/>
               <button type="button" className="btn btn-dark fixed"><LanguageSwitch/></button>
               <Header/>
-              <About handleNotification={this.handleNotificationSuccess}/>
+              <About handleNotificationSuccess={this.handleNotificationSuccess}
+                     handleNotificationFailure={this.handleNotificationFailure}/>
               <Resume/>
               <Portfolio/>
               <Footer/>

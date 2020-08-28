@@ -5,6 +5,7 @@ const sgMail = require('@sendgrid/mail');
 exports.contactMe = functions.https.onRequest((req, res) => {
   sgMail.setApiKey(functions.config().sendgrid.key);
   const { name, email, message, subject } = req.body;
+  functions.logger.log("Contact into", req.body);
 
   try{
     return cors(req, res, () => {
