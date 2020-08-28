@@ -30,9 +30,9 @@ class Resume extends Component<IProps, IState> {
         ].map(function (work) {
 
             return (<div key={work.title}><h3><FormattedMessage id={work.title}/></h3>
-                <p className="info"><FormattedMessage id={work.company}/><span>&bull;</span>
+                <p><FormattedMessage id={work.company}/><span>&bull;</span>
                     <em className="date"><FormattedMessage id={work.years}/></em><br/>
-                    <em className="date"><FormattedMessage id={work.location}/></em>
+                    <em className="date">{work.location}</em>
                 </p>
                 <p><FormattedMessage id={work.description}/></p>
             </div>)
@@ -84,7 +84,7 @@ class Resume extends Component<IProps, IState> {
                 <div key={education.school}><h3><FormattedMessage id={education.school}/></h3>
                     <p className="info"><FormattedMessage id={education.degree}/><span>&bull;</span>
                         <em className="date"><FormattedMessage id={education.graduated}/></em><br/>
-                        <em className="date"><FormattedMessage id={education.location}/></em>
+                        <em className="date">{education.location}</em>
                     </p>
                     {renderList(education.description)}
                     &nbsp;

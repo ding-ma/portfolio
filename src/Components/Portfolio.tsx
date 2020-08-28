@@ -62,7 +62,7 @@ class Portfolio extends Component<IProps, IState> {
             }
         ).map(function (project) {
             return (
-                <div className="carousel-item">
+                <div className="carousel-item" key={project.title}>
                     <a href={project.url} target="_blank" rel="noopener noreferrer">
                         <img className="d-block w-100" alt="Carousel Bootstrap Item"
                              src={project.image}/>
@@ -91,12 +91,12 @@ class Portfolio extends Component<IProps, IState> {
                     <div className="container-fluid">
                         <div className="carousel slide" id="carousel-644408">
                             <ol className="carousel-indicators">
-                                <li data-slide-to="0" data-target="#carousel-644408" className="active"/>
-                                <li/>
-                                <li/>
-                                <li/>
-                                <li/>
-                                <li/>
+                                <li key={"Active"} data-slide-to="0" data-target="#carousel-644408" className="active"/>
+                                <li key={"Brick"}/>
+                                <li key={"Minerva"}/>
+                                <li key={"Scripts"}/>
+                                <li key={"Data"}/>
+                                <li key={"Website"}/>
                             </ol>
                             <div className="carousel-inner">
                                 <div className="carousel-item active">

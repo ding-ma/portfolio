@@ -5,8 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {IntlProviderWrapper} from "./Translations/IntlContext";
-import 'react-app-polyfill/ie11';
-import 'react-app-polyfill/stable';
 
 ReactDOM.render(
     <React.StrictMode>
