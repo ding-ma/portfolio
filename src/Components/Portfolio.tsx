@@ -5,10 +5,11 @@ import bird from "../Images/McGillBird.jpg"
 import dataVerif from "../Images/dataVerif.png"
 import scripts from "../Images/scripts.png"
 import website from "../Images/website.jpg"
-import {faExternalLinkAlt} from "@fortawesome/free-solid-svg-icons";
+import {faExternalLinkAlt, faChevronRight, faChevronLeft} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import "./Portfolio.css"
 import {FormattedMessage} from "react-intl";
+import {Carousel} from "react-bootstrap";
 
 interface IProps {
 }
@@ -24,8 +25,13 @@ class Portfolio extends Component<IProps, IState> {
             return el1[index] === el2[index] ? 0 : (el1[index] < el2[index] ? -1 : 1);
         }
 
-        //todo shrink and add some padding
-        const projects: any[] = [
+        const projects: JSX.Element[] = [
+            {
+              "title":"Carousel.aide",
+                "category":"Carousel.aide.description",
+                "image": aide,
+                "url":"https://github.com/ding-ma/Projet-tude-de-cas-en-Qualit-de-l-air"
+            },
             {
                 "title": "Carousel.Brick",
                 "category": "Carousel.Brick.description",
@@ -62,11 +68,11 @@ class Portfolio extends Component<IProps, IState> {
             }
         ).map(function (project) {
             return (
-                <div className="carousel-item" key={project.title}>
+                <Carousel.Item>
                     <a href={project.url} target="_blank" rel="noopener noreferrer">
                         <img className="d-block w-100" alt="Carousel Bootstrap Item"
                              src={project.image}/>
-                        <div className="carousel-caption">
+                        <Carousel.Caption>
                             <FontAwesomeIcon
                                 icon={faExternalLinkAlt}/>
                             <h4>
@@ -75,64 +81,19 @@ class Portfolio extends Component<IProps, IState> {
                             <p>
                                 <FormattedMessage id={project.category}/>
                             </p>
-                        </div>
+                        </Carousel.Caption>
                     </a>
-                </div>
+                </Carousel.Item>
             )
         });
+
+        const next = <span className={"icon"}><FontAwesomeIcon size={"3x"} color={"#b0a200"} icon={faChevronRight}/> </span>
+        const prev = <span><FontAwesomeIcon size={"3x"} color={"#b0a200"} icon={faChevronLeft}/></span>
         return (
             <section id="portfolio">
-
-                <div className={"container"}>
-                    <div className="col-md-6 offset-md-2">
-                        <h1><FormattedMessage id={"Projects"}/></h1>
-                    </div>
-
-                    <div className="container-fluid">
-                        <div className="carousel slide" id="carousel-644408">
-                            <ol className="carousel-indicators">
-                                <li key={"Active"} data-slide-to="0" data-target="#carousel-644408" className="active"/>
-                                <li key={"Brick"}/>
-                                <li key={"Minerva"}/>
-                                <li key={"Scripts"}/>
-                                <li key={"Data"}/>
-                                <li key={"Website"}/>
-                            </ol>
-                            <div className="carousel-inner">
-                                <div className="carousel-item active">
-                                    <a href={"https://github.com/ding-ma/Projet-tude-de-cas-en-Qualit-de-l-air"}
-                                       target="_blank"
-                                       rel="noopener noreferrer">
-                                        <img className="d-block w-100" alt="Carousel Bootstrap First"
-                                             src={aide}/>
-                                        <div className="carousel-caption">
-                                            <FontAwesomeIcon
-                                                icon={faExternalLinkAlt}/>
-                                            <h4>
-                                                <FormattedMessage id={"Carousel.active"}/>
-                                            </h4>
-                                            <p>
-                                                <FormattedMessage id={"Carousel.active.description"}/>
-                                            </p>
-                                        </div>
-                                    </a>
-                                </div>
-                                {projects}
-                            </div>
-
-                            <a className="carousel-control-prev" href="#carousel-644408" data-slide="prev">
-                                <span className="carousel-control-prev-icon"/>
-                                <span className="sr-only">Previous</span>
-                            </a>
-                            <a className="carousel-control-next" href="#carousel-644408" data-slide="next">
-                                <span className="carousel-control-next-icon"/>
-                                <span className="sr-only">Next</span>
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-
+                    <Carousel nextIcon={next} prevIcon={prev}>
+                        {projects}
+                    </Carousel>
             </section>
         );
     }

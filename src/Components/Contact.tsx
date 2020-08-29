@@ -5,11 +5,11 @@ import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import {injectIntl} from 'react-intl'
 
 
-interface IState {
-}
-
 interface IProps {
     intl:any
+}
+
+interface IState {
 }
 
 class Contact extends Component<IProps, IState> {

@@ -12,7 +12,7 @@ class Resume extends Component<IProps, IState> {
 
     render() {
 
-        const works = [
+        const works: JSX.Element[] = [
             {
                 "company": "Desjardins",
                 "title": "Desjardins.title",
@@ -28,7 +28,6 @@ class Resume extends Component<IProps, IState> {
                 "description": "Eccc.description"
             }
         ].map(function (work) {
-
             return (<div key={work.title}><h4><FormattedMessage id={work.title}/></h4>
                 <p><FormattedMessage id={work.company}/><span>&bull;</span>
                     <em className="date"><FormattedMessage id={work.years}/></em><br/>
@@ -38,23 +37,23 @@ class Resume extends Component<IProps, IState> {
             </div>)
         });
 
-        const skills = [
+        const skills: JSX.Element[] = [
             "Python (Pandas, openCV, NumPy, Matplotlib, Selenium)",
-            "Git",
+            "Git, Github",
+            "Atlassian tools (Jira, Bitbucket, Confluence)",
+            "CI/CD (Github Actions, TravisCI, Jenkins)",
+            "Docker and Kubernetes",
             "Java (Spring Framework)",
-            "Heroku",
-            "Postgres",
-            "Assembly - ARM",
             "C",
             "Bash",
-            "UNIX",
-            "Cloud Services (GCP)",
-            "JavaScript (React, Puppeteer)"
+            "Unix/Linux",
+            "Cloud Services (Azure, GCP, Firebase, Heroku)",
+            "JavaScript & TypeScript (React, Puppeteer, Node.js)"
         ].sort().map(function (skill) {
             return <ul key={skill}>{skill}</ul>
         });
 
-        const education = [{
+        const education: JSX.Element[] = [{
             "school": "Mcgill",
             "degree": "Mcgill.degree",
             "graduated": "Mcgill.dates",
