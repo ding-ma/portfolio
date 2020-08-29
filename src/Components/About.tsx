@@ -72,25 +72,25 @@ class About extends Component<IProps, IState> {
         }
         const renderForm = () => {
             return (
-                    <form noValidate={true} autoComplete="off" id={"contact"}>
+                    <form noValidate={true} id={"contact"}>
                         <div className="form-group">
                             <h2><FormattedMessage id={"About.button.contact"}/></h2>
-                            <IntlLabel labelId={"Field4"} labelName={"Field4"} placeholderId={"Form.name"}
+                            <IntlLabel labelId={"Name"} labelName={"Name"} placeholderId={"Form.name"}
                                        onchange={this.handleName} isBox={false}/>
                         </div>
 
                         <div className="form-group">
-                            <IntlLabel labelId={"Field2"} labelName={"Field2"} placeholderId={"Form.email"}
-                                       onchange={this.handleEmail}  isBox={false}/>
+                            <IntlLabel labelId={"Email"} labelName={"Email"} placeholderId={"Form.email"}
+                                       onchange={this.handleEmail} isBox={false}/>
                         </div>
 
                         <div className="form-group">
-                            <IntlLabel labelId={"Field5"} labelName={"Field5"} placeholderId={"Form.subject"}
-                                       onchange={this.handleSubject}  isBox={false}/>
+                            <IntlLabel labelId={"Subject"} labelName={"Subject"} placeholderId={"Form.subject"}
+                                       onchange={this.handleSubject} isBox={false}/>
                         </div>
 
                         <div className="form-group">
-                            <IntlLabel labelId={"Field1"} labelName={"Field1"} placeholderId={"Form.message"}
+                            <IntlLabel labelId={"Message"} labelName={"Message"} placeholderId={"Form.message"}
                                        onchange={this.handleMsg} isBox={true}/>
                         </div>
 
