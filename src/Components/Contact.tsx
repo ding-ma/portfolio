@@ -2,11 +2,14 @@ import React, {Component} from 'react';
 import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import {injectIntl} from 'react-intl'
+
 
 interface IState {
 }
 
 interface IProps {
+    intl:any
 }
 
 class Contact extends Component<IProps, IState> {
@@ -15,23 +18,23 @@ class Contact extends Component<IProps, IState> {
         const networks: JSX.Element[] = [
             {
                 "name": "linkedin",
-                "url": "https://www.linkedin.com/in/ding--ma/",
+                "url": "LinkedIn",
                 "icon": faLinkedin
             },
             {
                 "name": "github",
-                "url": "https://github.com/ding-ma",
+                "url": "Github",
                 "icon": faGithub
             },
             {
                 "name": "email",
-                "url": "mailto:ding.ma@mail.mcgill.ca?subject=Contact%20Ding&body=Hey%20Ding%2C%0D%0A%0D%0A%5Binsert%20your%20message%5D",
+                "url": "Email",
                 "icon": faEnvelope
             }
-        ].map(function (network) {
+        ].map((network) => {
             return (
                 <li key={network.name}>
-                    <a href={network.url} target="_blank" rel="noopener noreferrer">
+                    <a href={this.props.intl.formatMessage({id: network.url})} target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={network.icon}/>
                     </a>
                 </li>
@@ -48,4 +51,4 @@ class Contact extends Component<IProps, IState> {
     }
 }
 
-export default Contact;
+export default injectIntl(Contact);

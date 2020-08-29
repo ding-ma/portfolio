@@ -3,6 +3,8 @@ import Typed from 'react-typed';
 import {FormattedMessage} from 'react-intl';
 import "./Header.css"
 import Contact from "./Contact";
+import EnglishSwitch from "../Translations/EnglishSwitch";
+import FrenchSwitch from "../Translations/FrenchSwitch";
 
 
 interface IProps {
@@ -15,6 +17,7 @@ interface IState {
 class Header extends Component<IProps, IState> {
 
     render() {
+
         return (
 
             <header id="home" className={"fullscreen"}>
@@ -27,14 +30,21 @@ class Header extends Component<IProps, IState> {
                         <span className="navbar-toggler-icon"/>
                     </button>
                     <div className="collapse navbar-collapse bg-lighter" id="navbarNavAltMarkup">
-                        <div className="navbar-nav">
-                            <a className="nav-item nav-link active" href="#home">Home <span
+                        <ul className="nav navbar-nav mr-auto">
+                            <a className="nav-link active" href="#home">Home <span
                                 className="sr-only">(current)</span></a>
+
                             <a className="nav-item nav-link" href="#about"><FormattedMessage
                                 id="header.about"/></a>
                             <a className="nav-item nav-link" href="#resume"><FormattedMessage id="header.resume"/></a>
                             <a className="nav-item nav-link" href="#portfolio"><FormattedMessage id="header.portfolio"/></a>
-                        </div>
+                            <ul className={"nav navbar-nav"}>
+                                <EnglishSwitch/>
+                                <FrenchSwitch/>
+                            </ul>
+
+                        </ul>
+
                     </div>
                 </nav>
 

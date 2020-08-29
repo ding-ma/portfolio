@@ -5,7 +5,7 @@ import {FormattedMessage} from "react-intl";
 import Button from 'react-bootstrap/Button';
 import profile from "../Images/profilepic.jpg"
 import "./About.css"
-import IntlLabel from "./InputTranslation";
+import IntlLabel from "../Translations/InputTranslation";
 
 interface IProps {
     handleNotificationSuccess: any

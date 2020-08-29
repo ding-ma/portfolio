@@ -4,6 +4,10 @@
     transform: translateX(-50%);
 }
 
+.navbar-nav .nav-item .nav-link {
+    color: #b0a200;
+}
+
 @media (max-width: 992px) {
     .navbar .navbar-collapse {
         text-align: center;

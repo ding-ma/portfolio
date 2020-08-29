@@ -4,7 +4,7 @@ import ReactNotification, {store} from 'react-notifications-component'
 import About from "./Components/About";
 import Header from "./Components/Header";
 import "./App.css"
-import LanguageSwitch from "./Translations/LanguageSwitch";
+import EnglishSwitch from "./Translations/EnglishSwitch";
 import Resume from "./Components/Resume";
 import Portfolio from "./Components/Portfolio";
 import Footer from "./Components/Footer";
@@ -58,7 +58,6 @@ class App extends Component<IProps, IState> {
       return(
           <div className="App">
               <ReactNotification/>
-              <button type="button" className="btn btn-dark fixed"><LanguageSwitch/></button>
               <Header/>
               <About handleNotificationSuccess={this.handleNotificationSuccess}
                      handleNotificationFailure={this.handleNotificationFailure}/>
