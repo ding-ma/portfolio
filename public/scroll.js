@@ -3,10 +3,12 @@ window.onscroll = function () {
     var scrollY = window.pageYOffset || document.documentElement.scrollTop;
     var header = document.querySelector('nav');
 
-    scrollY <= this.lastScroll
-        ? header.style.visibility = 'visible'
-        : header.style.visibility = 'hidden';
-
+    if (scrollY <= this.lastScroll) {
+        header.style.visibility = 'visible'
+    } else {
+        header.style.visibility = 'hidden'
+        header.style.display = ""
+    }
     this.lastScroll = scrollY;
 }
 
@@ -17,10 +19,9 @@ $(function () {
     });
 });
 
-//doesnt work to hide navbar with modal
-// $(document).ready(function () {
-//     $("button").click(function () {
-//         console.log("123");
-//         $('.navbar-collapse').collapse('hide');
-//     });
-// });
+$(document).ready(function () {
+    $("#contact").click(function () {
+        // document.querySelector('nav').style.visibility = 'hidden';
+        $("nav").hide();
+    });
+});

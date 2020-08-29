@@ -147,7 +147,8 @@ class About extends Component<IProps, IState> {
                                         </Button>
                                     </div>
                                     <div className="col-4">
-                                        <Button variant="secondary" className="button" onClick={this.openOnModal}>
+                                        <Button variant="secondary" className="button" onClick={this.openOnModal}
+                                                id={"contact"}>
                                             <FormattedMessage id={"About.button.contact"}/></Button>
                                     </div>
                                 </div>
@@ -156,7 +157,7 @@ class About extends Component<IProps, IState> {
                     </div>
                 </div>
                 <Modal closeOnEsc={true} open={this.state.isFormOpen} onClose={this.onCloseModal}
-                       showCloseIcon={false}
+                       showCloseIcon={true}
                        closeOnOverlayClick={true} center={true}>
                     {renderForm()}
                 </Modal>
