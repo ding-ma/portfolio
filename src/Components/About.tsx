@@ -6,7 +6,6 @@ import Button from 'react-bootstrap/Button';
 import profile from "../Images/profilepic.jpg"
 import "./About.css"
 import IntlLabel from "../Translations/InputTranslation";
-import {log} from "util";
 
 interface IProps {
     handleNotificationSuccess: any
