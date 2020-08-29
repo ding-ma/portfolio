@@ -18,7 +18,7 @@
     box-shadow: none;
 }
 
-.no-link {
+.no-link, .no-link:hover {
     color: inherit;
     text-decoration: none;
 }

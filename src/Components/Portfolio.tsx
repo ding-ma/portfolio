@@ -5,7 +5,8 @@ import bird from "../Images/McGillBird.jpg"
 import dataVerif from "../Images/dataVerif.png"
 import scripts from "../Images/scripts.png"
 import website from "../Images/website.jpg"
-import {faExternalLinkAlt, faChevronRight, faChevronLeft} from "@fortawesome/free-solid-svg-icons";
+import pet from "../Images/pet-pawlace.png"
+import {faChevronLeft, faChevronRight, faExternalLinkAlt} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import "./Portfolio.css"
 import {FormattedMessage} from "react-intl";
@@ -61,6 +62,12 @@ class Portfolio extends Component<IProps, IState> {
                 "category": "Carousel.website.description",
                 "image": website,
                 "url": "https://github.com/ding-ma/portfolio"
+            },
+            {
+                "title": "Carousel.pet",
+                "category": "Carousel.pet.description",
+                "image": pet,
+                "url": "https://github.com/McGill-ECSE321-Winter2020/project-group-01/"
             }
         ].sort(function (el1, el2) {
                 let compared = compare(el1, el2, "title");
@@ -91,9 +98,17 @@ class Portfolio extends Component<IProps, IState> {
         const prev = <span><FontAwesomeIcon size={"3x"} color={"#b0a200"} icon={faChevronLeft}/></span>
         return (
             <section id="portfolio">
-                    <Carousel nextIcon={next} prevIcon={prev}>
+                <div className={"container-fluid"}>
+                    <div className="row">
+                        <div className="col-md-3 offset-md-3">
+                            <h1><FormattedMessage id={"Projects"}/></h1>
+                        </div>
+                    </div>
+                    <Carousel nextIcon={next} prevIcon={prev} pause={'hover'}>
                         {projects}
                     </Carousel>
+                </div>
+
             </section>
         );
     }

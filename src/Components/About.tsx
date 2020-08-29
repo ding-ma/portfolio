@@ -65,11 +65,6 @@ class About extends Component<IProps, IState> {
     }
 
     render() {
-        //todo, find a way to colapse navbar
-
-        const closeFormAndNotify = () => {
-            this.contactMe()
-        }
         const renderForm = () => {
             return (
                     <form noValidate={true} id={"contact"}>
@@ -96,7 +91,7 @@ class About extends Component<IProps, IState> {
 
                         <div className="form-group">
                             <Button variant="secondary" className="button"
-                                onClick={() => closeFormAndNotify()}> Contact! </Button>
+                                    onClick={this.contactMe}> Contact! </Button>
                         </div>
                     </form>
             )

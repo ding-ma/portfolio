@@ -3,7 +3,7 @@
   "header.resume": "CV",
   "header.portfolio": "Travaux",
   "header.introduction": "J'étudie en génie logiciel à l'université de McGill dans la {province} du Québec.",
-  "About": "À propos",
+  "About": "À propos de moi",
   "About.me": "J'ai grandi à Gatineau. En grandissant, j'ai appris à parler l'anglais, le français, et le mandarin. Maintenant, ce qui me passionne est l'automation, le développement backend, l'intelligence artificielle, la science des données. En dehors de l'école, je suis un grand chef, et je joue au violon. J'ai aussi un interet en {techwear} .",
   "About.contact": "Détail de contact",
   "About.contract.details": "Detailt de contact",
@@ -49,5 +49,7 @@
   "Carousel.dataverif": "Vérification des données",
   "Carousel.dataverif.description": "Script qui analyse les données météo et surligne les données importantes",
   "Carousel.website": "Ce Site",
-  "Carousel.website.description": "Fait en React, Typescript et Bootstrap 4"
+  "Carousel.website.description": "Fait en React, Typescript et Bootstrap 4",
+  "Carousel.pet": "Pet Pawlace",
+  "Carousel.pet.description": "Project de cours: Application pour adopter des animoux. Fait avec Spring and React"
 }

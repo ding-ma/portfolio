@@ -36,7 +36,7 @@
   "Heritage.description": "Graduated with honors",
   "Skills": "Skills",
   "TechStack": "Here are some technologies that I have worked with",
-  "Projects": "Check Out of My Works.",
+  "Projects": "Check out My Works.",
   "Carousel.aide": "AIDE - GUI tool",
   "Carousel.aide.description": "Built during my S19 intern",
   "Carousel.Brick": "Brick Breaker",
@@ -48,5 +48,7 @@
   "Carousel.dataverif": "Data Verification",
   "Carousel.dataverif.description": "Script that analyzes weather data and highlights important information",
   "Carousel.website": "This Website",
-  "Carousel.website.description": "Built in React, Typescript and Bootstrap 4"
+  "Carousel.website.description": "Built in React, Typescript and Bootstrap 4",
+  "Carousel.pet": "Pet Pawlace",
+  "Carousel.pet.description": "Class project: Pet shelter adoption application with Spring and React"
 }
