@@ -3,7 +3,7 @@ import { IntlProvider } from "react-intl";
 
 import en_local from "./en.json"
 import fr_local from "./fr.json"
-
+import common from "./common.json"
 
 const Context = React.createContext();
 
@@ -12,10 +12,10 @@ class IntlProviderWrapper extends React.Component {
         super(...args);
 
         this.switchToEnglish = () =>
-            this.setState({ locale: "en", messages: en_local });
+            this.setState({ locale: "en", messages: {...en_local, ...common}});
 
         this.switchToFrench = () =>
-            this.setState({ locale: "fr", messages: fr_local });
+            this.setState({ locale: "fr", messages: {...fr_local, ...common}});
 
         // pass everything in state to avoid creating object inside render method (like explained in the documentation)
         this.state = {
